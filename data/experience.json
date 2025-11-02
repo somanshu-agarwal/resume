@@ -1,0 +1,44 @@
+[
+  {
+    "company": "FIS",
+    "role": "Senior Product Owner (Agile / Integrations)",
+    "location": "Pune, India",
+    "period": "Jun 2024 \u2013 Present",
+    "summary": "Tasked with modernizing FIS\u2019s global Quote-to-Cash process through Azure-based integrations. Delivered 6+ end-to-end integrations connecting CRM, Billing and ERP. Automated CPQ, Billing, and PDF Invoice flows, partnered with business and architecture teams, and mentored junior product owners."
+  },
+  {
+    "company": "Sago",
+    "role": "Associate Product Manager",
+    "location": "Remote (India / Germany / US)",
+    "period": "Oct 2021 \u2013 Apr 2024",
+    "summary": "Worked with multi-region teams to automate RFQ-to-Invoicing workflows, deployed Salesforce CPQ integrations across markets, and built an effort estimation tool reducing manual planning by 30%."
+  },
+  {
+    "company": "Jagran New Media",
+    "role": "Assistant Product Manager",
+    "location": "Delhi, India",
+    "period": "Apr 2021 \u2013 Oct 2021",
+    "summary": "Supported digital product team for Jagran.com and VishvasNews.com; conducted UX research & A/B testing; shaped roadmap decisions for 100k+ monthly users."
+  },
+  {
+    "company": "Songdew.com",
+    "role": "Product Manager (Opportunities Module)",
+    "location": "Gurgaon, India",
+    "period": "Jul 2020 \u2013 Apr 2021",
+    "summary": "Redesigned artist collaboration journeys, partnered with marketing & tech to launch new features, increasing participation by 20%."
+  },
+  {
+    "company": "Times Internet",
+    "role": "Manager",
+    "location": "Mumbai, India",
+    "period": "Feb 2020 \u2013 Jul 2020",
+    "summary": "Translated user insights into product features for TimesJobs & TechGig, focusing on B2B platforms and customer experience."
+  },
+  {
+    "company": "Accenture",
+    "role": "Application Development Analyst",
+    "location": "Pune, India",
+    "period": "Nov 2014 \u2013 Nov 2017",
+    "summary": "Developed backend modules using COBOL, CICS, and IBM DB2 for European banking clients; maintained sub-1% defect rate for high-volume transactions."
+  }
+]

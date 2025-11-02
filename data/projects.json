@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Global Q2C Integrations (FIS)",
+      "description": "Modernized FIS's global Quote-to-Cash process: delivered 6+ end-to-end integrations connecting CRM, Billing, and ERP across EU, US, and APAC.",
+      "technologies": [
+        "Azure",
+        "Logic Apps",
+        "Data Factory",
+        "APIs",
+        "CPQ"
+      ],
+      "githubUrl": "",
+      "liveUrl": "",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "RFQ-to-Invoice Automation (Sago)",
+      "description": "Automated RFQ-to-Invoice workflows and shortened quote-to-invoice cycle by ~10 days through API-driven workflow automation.",
+      "technologies": [
+        "API",
+        "Salesforce CPQ",
+        "Workflow Automation"
+      ],
+      "githubUrl": "",
+      "liveUrl": "",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "title": "Artist Collaboration Module (Songdew)",
+      "description": "Re-designed user journey for artist collaborations, reducing drop-off by ~15% and increasing feature participation.",
+      "technologies": [
+        "SaaS",
+        "UX",
+        "Agile"
+      ],
+      "githubUrl": "",
+      "liveUrl": "",
+      "featured": false
+    }
+  ]
+}
