@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Somanshu Agarwal — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Somanshu Agarwal — Agile Product Owner, Cloud Integrations & Q2C Platforms" />
+</head>
+<body>
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar">SA</div>
+        <div>
+          <h1 id="name">Loading...</h1>
+          <p id="title">Agile Product Owner</p>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav"></nav>
+
+      <div class="sidebar-footer">
+        <div class="contact" id="contact"></div>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input id="themeToggle" type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content" id="content">
+      <header class="topbar">
+        <div class="breadcrumbs">Portfolio • Live Resume</div>
+        <div class="tools">
+          <button id="downloadPdf" class="btn">Download PDF</button>
+          <button id="openAdmin" class="btn">⚙️ Admin</button>
+        </div>
+      </header>
+
+      <section id="hero" class="panel hero">
+        <div class="hero-grid">
+          <div>
+            <h2 id="heroTitle">Loading...</h2>
+            <p id="heroBio"></p>
+            <div class="meta">
+              <span id="location">Pune, India</span>
+              <span id="relocation">• Open to relocation</span>
+            </div>
+            <div id="heroLinks" class="links"></div>
+          </div>
+          <div class="hero-actions">
+            <img src="assets/images/profile.jpg" alt="avatar" onerror="this.style.display='none'"/>
+            <div class="cta">
+              <a id="emailLink" class="cta-btn" href="#contact">Email</a>
+              <a id="linkedinLink" class="cta-btn ghost" href="#" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="panel">
+        <h3>Skills & Tools</h3>
+        <div id="skillsGrid" class="skills-grid"></div>
+      </section>
+
+      <section id="projects" class="panel">
+        <h3>Projects</h3>
+        <div class="project-controls">
+          <input id="projectFilter" placeholder="Filter by tech (e.g. Azure, JS)" />
+        </div>
+        <div id="projectsGrid" class="projects-grid"></div>
+      </section>
+
+      <section id="experience" class="panel">
+        <h3>Experience</h3>
+        <div id="expList" class="exp-list"></div>
+      </section>
+
+      <section id="education" class="panel">
+        <h3>Education</h3>
+        <div id="eduList"></div>
+      </section>
+
+      <section id="hobbies" class="panel">
+        <h3>Hobbies & Interests</h3>
+        <div id="hobbiesList"></div>
+      </section>
+
+      <footer class="footer panel">
+        <div>© Somanshu Agarwal — Live Resume</div>
+        <div class="socials" id="socials"></div>
+      </footer>
+    </main>
+
+    <!-- Admin Modal -->
+    <dialog id="adminDialog" class="admin-dialog">
+      <form method="dialog" class="admin-form">
+        <h3>Admin — Edit content</h3>
+        <div class="admin-tabs">
+          <select id="adminFileSelect">
+            <option value="profile">profile.json</option>
+            <option value="experience">experience.json</option>
+            <option value="projects">projects.json</option>
+            <option value="skills">skills.json</option>
+            <option value="education">education.json</option>
+            <option value="hobbies">hobbies.json</option>
+          </select>
+          <button id="importJson" class="btn ghost">Import JSON</button>
+          <button id="exportJson" class="btn">Export JSON</button>
+        </div>
+        <textarea id="adminEditor" spellcheck="false"></textarea>
+        <menu>
+          <button id="saveAdmin" class="btn primary">Save & Apply</button>
+          <button id="closeAdmin" class="btn ghost">Close</button>
+        </menu>
+      </form>
+    </dialog>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
