@@ -1,27 +1,42 @@
-# Somanshu Agarwal — Portfolio (Hybrid Balance)
+# Somanshu Agarwal - Portfolio
 
-A single-page, Notion-inspired portfolio built with HTML/CSS/Vanilla JS and JSON data files.
+A modern, responsive portfolio website built with vanilla HTML, CSS, and JavaScript. Features a clean design, dark/light mode, and an admin panel for easy content management.
 
-## Deploy to Cloudflare Pages (recommended)
-1. Create a new repository on GitHub and push this project.
-2. Go to Cloudflare Pages -> Create a project -> Connect to your GitHub repo.
-3. Set the **Production branch** to `main` (or default branch).
-4. Build settings: For static HTML, leave the build command empty and set the build directory to `/`.
-5. Click **Save and Deploy** — your site will be live on Cloudflare after deployment finishes.
+## Features
 
-## Local testing
-Run a local static server (recommended to allow fetch of local JSON files):
-```bash
-# Python 3
-python -m http.server 5500
-# then open http://localhost:5500 in your browser
-```
+- 🎨 Modern, responsive design
+- 🌓 Dark/Light mode toggle
+- 📱 Mobile-friendly layout
+- ⚡ Fast loading with vanilla JS
+- 🛠️ Admin panel for content management
+- 📊 Interactive project filtering
+- 🎯 SEO optimized
+- 📄 Print-friendly styles
 
-## How to edit content
-- Edit files inside the `data/` folder (profile.json, experience.json, projects.json, skills.json, education.json, hobbies.json).
-- Alternatively, open the site and use the Admin (⚙️) panel to edit & save data to localStorage, then export JSON.
+## Project Structure
+portfolio/
+├── index.html
+├── css/
+│ └── style.css
+├── js/
+│ ├── app.js
+│ └── dataManager.js
+└── assets/profile.jpg (DP)
+└── images/
+└── profile.jpg (i removed fsllback image by mistake)
 
-## Notes
-- Admin edits are saved to localStorage in the browser. To make permanent server changes, update the JSON files on your repo.
-- This project has no external dependencies and is fully self-hostable.
 
+## Setup & Deployment
+
+### Local Development
+1. Clone the repository
+2. Serve the files using a local server (due to CORS with JSON files):
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve .
+   
+   # Using PHP
+   php -S localhost:8000

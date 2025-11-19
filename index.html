@@ -3,124 +3,232 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Somanshu Agarwal — Portfolio</title>
+  <title>Somanshu - Product Manager</title>
+  <meta name="description" content="Product Manager bridging technology and business. Building products users love while driving measurable impact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="Somanshu Agarwal — Agile Product Owner, Cloud Integrations & Q2C Platforms" />
 </head>
 <body>
-  <div id="app" class="app">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="avatar">SA</div>
-        <div>
-          <h1 id="name">Loading...</h1>
-          <p id="title">Agile Product Owner</p>
+  <div id="app">
+    <!-- Minimal Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-mark">SA</div>
+        </div>
+        <nav class="nav">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero - Human Focused -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-image">
+          <img src="assets/profile.jpg" alt="Somanshu Agarwal" onerror="this.style.display='none'">
+          <div class="image-fallback">SA</div>
+        </div>
+        <h1 class="hero-greeting">Hi, I'm Somanshu</h1>
+        <h2 class="hero-title">
+          I build products that 
+          <span class="title-accent">people actually love</span>
+        </h2>
+          <p class="hero-subtitle">
+           Started with code, fell in love with people<br>
+           Now I build products that make life better
+          </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">See my work</a>
+          <a href="#contact" class="btn btn-secondary">Let's talk</a>
         </div>
       </div>
+    </section>
 
-      <nav class="nav" id="nav"></nav>
+    <!-- Work - Human Stories -->
+    <section id="work" class="section">
+      <div class="section-content">
+        <h2 class="section-title">My Work</h2>
+        
+        <div class="projects">
+          <!-- Project 1 - FinTech -->
+          <div class="project-card">
+            <div class="project-header">
+              <h3>FinTech Q2C Transformation</h3>
+              <span class="project-year">FIS • 2024</span>
+            </div>
+            <p class="project-description">
+              Modernized quote-to-cash for global fintech, connecting enterprise systems via Azure middleware. 
+              Impacted multi-million dollar revenue streams.
+            </p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">60%</span>
+                <span class="metric-label">faster invoicing</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">6+</span>
+                <span class="metric-label">integrations</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Azure</span>
+              <span class="tag">Middleware</span>
+              <span class="tag">Enterprise</span>
+              <span class="tag">Q2C</span>
+            </div>
+          </div>
 
-      <div class="sidebar-footer">
-        <div class="contact" id="contact"></div>
-        <div class="theme-toggle">
-          <label class="switch">
-            <input id="themeToggle" type="checkbox" />
-            <span class="slider"></span>
-          </label>
+          <!-- Project 2 - B2C App -->
+          <div class="project-card">
+            <div class="project-header">
+              <h3>BareMinimum App</h3>
+              <span class="project-year">Side Project • 2024</span>
+            </div>
+            <p class="project-description">
+              B2C personal finance app for mindful spending. Built from discovery to launch, 
+              solving real user pain points around budget anxiety.
+            </p>
+            <div class="project-actions">
+              <a href="https://github.com/somanshu-agarwal/bareminimum" class="btn btn-small" target="_blank">
+                View Code
+              </a>
+            </div>
+            <div class="project-tags">
+              <span class="tag">B2C</span>
+              <span class="tag">React</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Launch</span>
+            </div>
+          </div>
+
+          <!-- Project 3 - B2B Automation -->
+          <div class="project-card">
+            <div class="project-header">
+              <h3>B2B Workflow Automation</h3>
+              <span class="project-year">Sago • 2023</span>
+            </div>
+            <p class="project-description">
+              Automated RFQ-to-Invoice for international teams. Reduced manual work by 30% 
+              and improved data accuracy across sales systems.
+            </p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">30%</span>
+                <span class="metric-label">less manual work</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">10 days</span>
+                <span class="metric-label">faster cycle</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Automation</span>
+              <span class="tag">B2B</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Salesforce</span>
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
+    </section>
 
-    <main class="content" id="content">
-      <header class="topbar">
-        <div class="breadcrumbs">Portfolio • Live Resume</div>
-        <div class="tools">
-          <button id="downloadPdf" class="btn">Download PDF</button>
-          <button id="openAdmin" class="btn">⚙️ Admin</button>
-        </div>
-      </header>
-
-      <section id="hero" class="panel hero">
-        <div class="hero-grid">
-          <div>
-            <h2 id="heroTitle">Loading...</h2>
-            <p id="heroBio"></p>
-            <div class="meta">
-              <span id="location">Pune, India</span>
-              <span id="relocation">• Open to relocation</span>
+    <!-- About - Human Approach -->
+    <section id="about" class="section section-alt">
+      <div class="section-content">
+        <h2 class="section-title">My Approach</h2>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-intro">
+              I believe technology should serve people, not the other way around. 
+              My journey from engineering to product taught me that the best solutions come from understanding both code and humans.
+            </p>
+            
+            <div class="about-highlights">
+              <div class="highlight">
+                <strong>9+ years</strong>
+                <span>in tech</span>
+              </div>
+              <div class="highlight">
+                <strong>Empathy First</strong>
+                <span>approach</span>
+              </div>
+              <div class="highlight">
+                <strong>Impact Driven</strong>
+                <span>mindset</span>
+              </div>
             </div>
-            <div id="heroLinks" class="links"></div>
+
+            <!-- Simple Beliefs - Replaced Framework -->
+            <div class="beliefs">
+              <p>I listen more than I talk. The best insights come from users, not assumptions.</p>
+              <p>Complexity should be handled by the system, not felt by the user.</p>
+              <p>Great products solve real problems for real people.</p>
+            </div>
+
+            <div class="skills-minimal">
+              <h4>What I Do</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">User Research</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Execution</span>
+              </div>
+            </div>
           </div>
-          <div class="hero-actions">
-            <img src="assets/images/profile.jpg" alt="avatar" onerror="this.style.display='none'"/>
-            <div class="cta">
-              <a id="emailLink" class="cta-btn" href="#contact">Email</a>
-              <a id="linkedinLink" class="cta-btn ghost" href="#" target="_blank">LinkedIn</a>
+          
+          <div class="about-sidebar">
+            <div class="fun-facts">
+              <h4>Beyond Work</h4>
+              <ul>
+                <li><a href="https://chambalguy.com" target="_blank" class="music-link">🎸 Write and play music</a></li>
+                <li>🏋️ Love strength training</li>
+                <li>👨‍🍳 Experiment with cooking</li>
+                <li>☕ Masala chai enthusiast</li>
+                <li>🚀 Build side projects</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="skills" class="panel">
-        <h3>Skills & Tools</h3>
-        <div id="skillsGrid" class="skills-grid"></div>
-      </section>
-
-      <section id="projects" class="panel">
-        <h3>Projects</h3>
-        <div class="project-controls">
-          <input id="projectFilter" placeholder="Filter by tech (e.g. Azure, JS)" />
+    <!-- Contact - Human Connection -->
+    <section id="contact" class="section">
+      <div class="section-content">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-intro">
+          If you're building something meaningful or just want to chat about products, 
+          I'd love to hear from you. No buzzwords, just real talk.
+        </p>
+        
+        <div class="contact-actions">
+          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-large">
+            Send me an email
+          </a>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/somanshu-agarwal/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/somanshu-agarwal" target="_blank">GitHub</a>
+          </div>
         </div>
-        <div id="projectsGrid" class="projects-grid"></div>
-      </section>
+      </div>
+    </section>
 
-      <section id="experience" class="panel">
-        <h3>Experience</h3>
-        <div id="expList" class="exp-list"></div>
-      </section>
-
-      <section id="education" class="panel">
-        <h3>Education</h3>
-        <div id="eduList"></div>
-      </section>
-
-      <section id="hobbies" class="panel">
-        <h3>Hobbies & Interests</h3>
-        <div id="hobbiesList"></div>
-      </section>
-
-      <footer class="footer panel">
-        <div>© Somanshu Agarwal — Live Resume</div>
-        <div class="socials" id="socials"></div>
-      </footer>
-    </main>
-
-    <!-- Admin Modal -->
-    <dialog id="adminDialog" class="admin-dialog">
-      <form method="dialog" class="admin-form">
-        <h3>Admin — Edit content</h3>
-        <div class="admin-tabs">
-          <select id="adminFileSelect">
-            <option value="profile">profile.json</option>
-            <option value="experience">experience.json</option>
-            <option value="projects">projects.json</option>
-            <option value="skills">skills.json</option>
-            <option value="education">education.json</option>
-            <option value="hobbies">hobbies.json</option>
-          </select>
-          <button id="importJson" class="btn ghost">Import JSON</button>
-          <button id="exportJson" class="btn">Export JSON</button>
-        </div>
-        <textarea id="adminEditor" spellcheck="false"></textarea>
-        <menu>
-          <button id="saveAdmin" class="btn primary">Save & Apply</button>
-          <button id="closeAdmin" class="btn ghost">Close</button>
-        </menu>
-      </form>
-    </dialog>
-
+    <!-- Minimal Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Built with care and too much masala chai</p>
+        <p>© 2024 Somanshu Agarwal</p>
+      </div>
+    </footer>
   </div>
 
-  <script type="module" src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
