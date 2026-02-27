@@ -4,248 +4,394 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Somanshu - Product Manager</title>
+  <meta name="description" content="Product Manager bridging technology and business. Building products users love while driving measurable impact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* CSS - The Look */
-    :root { --bg: #ffffff; --text: #1a1a1a; --accent: #666; --light: #f9f9f9; --border: #eeeeee; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; scroll-behavior: smooth; }
-
-    .header { padding: 1.2rem 2rem; position: sticky; top: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--border); }
-    .header-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo-mark { font-weight: 800; background: #000; color: #fff; padding: 5px 10px; border-radius: 4px; }
-    .nav a { text-decoration: none; color: var(--accent); margin-left: 1.5rem; font-size: 0.85rem; font-weight: 500; }
-
-    .hero { padding: 8rem 2rem 5rem; text-align: center; max-width: 850px; margin: 0 auto; }
-    .hero-image { width: 100px; height: 100px; border-radius: 50%; background: var(--light); margin: 0 auto 2rem; border: 1px solid var(--border); overflow: hidden; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; }
-    .hero-title { font-size: 3.5rem; line-height: 1.1; letter-spacing: -0.05em; margin-bottom: 1.5rem; }
-    .title-accent { color: var(--accent); font-style: italic; }
-    .hero-subtitle { font-size: 1.2rem; color: var(--accent); max-width: 600px; margin: 0 auto 2rem; }
-
-    .section { padding: 6rem 2rem; }
-    .section-alt { background: var(--light); }
-    .section-content { max-width: 1000px; margin: 0 auto; }
-    .section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 3.5rem; text-align: center; }
-
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .project-card { background: #fff; padding: 2rem; border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; transition: transform 0.2s; }
-    .project-card:hover { transform: translateY(-4px); }
-    .project-header { display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: baseline; }
-    .project-header h3 { font-size: 1.2rem; }
-
-    .project-metrics { display: flex; gap: 1.5rem; margin: 1.5rem 0; padding: 1rem 0; border-top: 1px solid var(--border); }
-    .metric { display: flex; flex-direction: column; }
-    .metric-value { font-size: 1.25rem; font-weight: 700; display: block; }
-    .metric-label { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; }
-    
-    .tag { font-size: 0.65rem; background: var(--light); padding: 4px 8px; border-radius: 4px; margin-right: 5px; color: var(--accent); border: 1px solid var(--border); }
-
-    .about-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
-    .about-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-    .highlight { padding: 1.5rem; background: var(--light); border-radius: 8px; text-align: center; border: 1px solid var(--border); }
-    .highlight strong { display: block; font-size: 1.2rem; }
-    .highlight span { font-size: 0.7rem; color: var(--accent); }
-
-    .btn { padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.2s; display: inline-block; }
-    .btn-primary { background: #000; color: #fff; }
-    .btn-secondary { border: 1px solid var(--border); color: #000; }
-    .btn-small { padding: 0.4rem 0.8rem; font-size: 0.75rem; margin-top: 1rem; }
-
-    .footer { padding: 4rem 2rem; text-align: center; border-top: 1px solid var(--border); color: var(--accent); font-size: 0.8rem; }
-
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
-      .about-layout { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="app">
+    <!-- Minimal Header -->
     <header class="header">
       <div class="header-content">
-        <div class="logo"><div class="logo-mark">SA</div></div>
-        <nav class="nav">
-          <a href="#work">Work</a>
-          <a href="#vibecoding">Vibe Coding</a>
-          <a href="#design">Design</a>
-          <a href="#writing">Writing</a>
-          <a href="#about">About</a>
-        </nav>
+        <div class="logo">
+          <div class="logo-mark">SA</div>
+        </div>
+          <nav class="nav">
+            <a href="#work">Work</a>
+            <a href="#vibecoding">Vibe Coding</a>
+            <a href="#design">Design</a>
+            <a href="#writing">Writing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
       </div>
     </header>
 
+    <!-- Hero - Human Focused -->
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-image">SA</div>
+        <div class="hero-image">
+          <img src="assets/profile.jpg" alt="Somanshu Agarwal" onerror="this.style.display='none'">
+          <div class="image-fallback">SA</div>
+        </div>
         <h1 class="hero-greeting">Hi, I'm Somanshu</h1>
-        <h2 class="hero-title">I build products that <span class="title-accent">people actually love</span></h2>
-        <p class="hero-subtitle">Started with code, fell in love with people. Now I build products that make life better.</p>
+        <h2 class="hero-title">
+          I build products that 
+          <span class="title-accent">people actually love</span>
+        </h2>
+          <p class="hero-subtitle">
+           Started with code, fell in love with people<br>
+           Now I build products that make life better
+          </p>
         <div class="hero-actions">
           <a href="#work" class="btn btn-primary">See my work</a>
-          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-secondary">Let's talk</a>
+          <a href="#contact" class="btn btn-secondary">Let's talk</a>
         </div>
       </div>
     </section>
 
-    <section id="work" class="section">
-      <div class="section-content">
-        <h2 class="section-title">Professional Impact</h2>
-        <div id="work-grid" class="projects-grid"></div>
-      </div>
-    </section>
-
-    <section id="vibecoding" class="section section-alt">
-      <div class="section-content">
-        <h2 class="section-title">Vibe Coding</h2>
-        <div id="vibe-grid" class="projects-grid"></div>
-      </div>
-    </section>
-
-    <section id="design" class="section">
-        <div class="section-content">
-          <h2 class="section-title">Design & Strategy</h2>
-          <div id="design-grid" class="projects-grid"></div>
+    <!-- Work - Human Stories -->
+<section id="work" class="section">
+  <div class="section-content">
+    <h2 class="section-title">My Work</h2>
+    
+    <div class="projects">
+      <!-- Project 1 - FinTech -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>FinTech Q2C Transformation</h3>
+          <span class="project-year">FIS • 2024</span>
         </div>
-      </section>
+        <p class="project-description">
+          Modernized quote-to-cash for global fintech, connecting enterprise systems via Azure middleware. 
+          Impacted multi-million dollar revenue streams.
+        </p>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">60%</span>
+            <span class="metric-label">faster invoicing</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">6+</span>
+            <span class="metric-label">integrations</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Azure</span>
+          <span class="tag">Middleware</span>
+          <span class="tag">Enterprise</span>
+          <span class="tag">Q2C</span>
+        </div>
+      </div>
 
-    <section id="writing" class="section section-alt">
+      <!-- Project 2 - B2B Automation -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>B2B Workflow Automation</h3>
+          <span class="project-year">Sago • 2023</span>
+        </div>
+        <p class="project-description">
+          Automated RFQ-to-Invoice for international teams. Reduced manual work by 30% 
+          and improved data accuracy across sales systems.
+        </p>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">30%</span>
+            <span class="metric-label">less manual work</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">10 days</span>
+            <span class="metric-label">faster cycle</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Automation</span>
+          <span class="tag">B2B</span>
+          <span class="tag">APIs</span>
+          <span class="tag">Salesforce</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Vibe Coding Section -->
+<section id="vibecoding" class="section section-alt">
+  <div class="section-content">
+    <h2 class="section-title">Vibe Coding</h2>
+    <p class="contact-intro" style="margin-bottom: 3rem; text-align: center;">
+      Passion projects built for fun, learning, and solving everyday problems
+    </p>
+    
+    <div class="projects">
+      <!-- Purushartha App -->
+<div class="project-card">
+  <div class="project-header">
+    <h3>Purushartha App</h3>
+    <span class="project-year">Side Project • 2024</span>
+  </div>
+  <p class="project-description">
+    A daily life manager app inspired by ancient Indian philosophy. Helps users balance the four Purusharthas 
+    (Dharma, Artha, Kama, Moksha) through daily tracking, reflection, and mindful habit building.
+  </p>
+  <div class="project-metrics">
+    <div class="metric">
+      <span class="metric-value">4</span>
+      <span class="metric-label">life pillars</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">Daily</span>
+      <span class="metric-label">tracking</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">Mindful</span>
+      <span class="metric-label">living</span>
+    </div>
+  </div>
+  <div class="project-actions">
+    <a href="https://purushartha.expo.app/" class="btn btn-small btn-primary" target="_blank">
+      Live Prototype ↗
+    </a>
+    <a href="https://github.com/somanshu-agarwal/purushartha" class="btn btn-small" target="_blank">
+      View Code
+    </a>
+  </div>
+  <div class="project-tags">
+    <span class="tag">React Native</span>
+    <span class="tag">Mindfulness</span>
+    <span class="tag">Daily Tracking</span>
+    <span class="tag">Philosophy</span>
+  </div>
+</div>
+
+      <!-- BareMinimum App (Moved from Work) -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>BareMinimum App</h3>
+          <span class="project-year">Side Project • 2024</span>
+        </div>
+        <p class="project-description">
+          B2C personal finance app for mindful spending. Built from discovery to launch, 
+          solving real user pain points around budget anxiety and financial overwhelm.
+        </p>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">Zero-based</span>
+            <span class="metric-label">budgeting</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">Mindful</span>
+            <span class="metric-label">spending</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/somanshu-agarwal/bareminimum" class="btn btn-small" target="_blank">
+            View Code
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">B2C</span>
+          <span class="tag">React</span>
+          <span class="tag">User Research</span>
+          <span class="tag">Personal Finance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>    
+
+<!-- Design & Strategy Section -->
+<section id="design" class="section section-alt">
+  <div class="section-content">
+    <h2 class="section-title">Design & Strategy</h2>
+    
+    <div class="projects">
+      <!-- BidCube Design -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>BidCube UX Revamp</h3>
+          <span class="project-year">Sago • 2023</span>
+        </div>
+        <p class="project-description">
+          Complete redesign of bidding management tool. Included functional flow analysis, current state challenges, and future state vision across all modules.
+        </p>
+        <div class="project-actions">
+          <a href="https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp?t=j8CLTMzGcsZv7kMw-1" 
+             class="btn btn-small" target="_blank">
+            View Strategy Board
+          </a>
+          <a href="https://www.figma.com/proto/YGKjPkEatHKjhqae5Wa6M8/Bid-Cube-Revamp-Designs--Copy-?node-id=195-3257&p=f&t=nsC80Qlrx791uRGp-1&scaling=scale-down&content-scaling=responsive&page-id=103%3A242&starting-point-node-id=195%3A3257" 
+             class="btn btn-small" target="_blank">
+            View UI Designs
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Figma</span>
+          <span class="tag">User Journey</span>
+          <span class="tag">B2B SaaS</span>
+          <span class="tag">UX Design</span>
+        </div>
+      </div>
+
+      <!-- Sukanya Calculator -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Sukanya Samriddhi Calculator</h3>
+          <span class="project-year">Jagran • 2021</span>
+        </div>
+        <p class="project-description">
+          Designed user journey and interface for financial calculator helping parents plan for daughters' education. Simplified complex financial planning into intuitive workflows.
+        </p>
+        <div class="project-actions">
+          <a href="https://www.figma.com/proto/4wTt0Xpeavnv2VHBrp1Jwu/Untitled?node-id=1-2&p=f&t=DOn2pe4TTVmOmYax-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" 
+             class="btn btn-small" target="_blank">
+            View Prototype
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">User Journey</span>
+          <span class="tag">Financial UX</span>
+          <span class="tag">Calculator Design</span>
+          <span class="tag">B2C</span>
+        </div>
+      </div>
+
+      <!-- Indie Music Website -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Indie Music News Platform</h3>
+          <span class="project-year">Side Project • 2024</span>
+        </div>
+        <p class="project-description">
+          Designed a modern platform for independent music discovery. Focused on artist storytelling and community engagement through intuitive UI/UX.
+        </p>
+        <div class="project-actions">
+          <a href="https://www.figma.com/proto/A1TmSuheLTBh8a9zPkxA2i/INDIE-NEWS?node-id=12-934&p=f&t=nxGbr3IvViGdw4zh-1&scaling=contain&content-scaling=responsive&page-id=0%3A1" 
+             class="btn btn-small" target="_blank">
+            View Prototype
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">Visual Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Writing Section -->
+    <section id="writing" class="section">
       <div class="section-content">
         <h2 class="section-title">My Writing</h2>
-        <div id="substack-feed" style="max-width: 700px; margin: 0 auto;"></div>
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="https://blogbysomanshu.substack.com/" target="_blank" class="btn btn-secondary">Substack ↗</a>
+        <p class="contact-intro" style="margin-bottom: 3rem;">
+          I write about product, life, and the messiness of building things. 
+          <a href="https://blogbysomanshu.substack.com/" target="_blank" style="color: #000; text-decoration: underline;">Read on Substack ↗</a>
+        </p>
+        
+        <div id="substack-feed" class="projects">
+          <div class="project-card" style="text-align: center; opacity: 0.5;">
+            <p>Loading latest thoughts...</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- About - Human Approach -->
     <section id="about" class="section">
-        <div class="section-content">
-          <h2 class="section-title">Approach</h2>
-          <div class="about-layout">
-            <div class="about-text">
-                <p>I believe technology should serve people, not the other way around. My journey from engineering to product taught me that the best solutions come from understanding both code and humans.</p>
-                <div class="about-highlights">
-                    <div class="highlight"><strong>9+ years</strong><span>in tech</span></div>
-                    <div class="highlight"><strong>Empathy</strong><span>first</span></div>
-                    <div class="highlight"><strong>Impact</strong><span>driven</span></div>
-                </div>
+      <div class="section-content">
+        <h2 class="section-title">My Approach</h2>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-intro">
+              I believe technology should serve people, not the other way around. 
+              My journey from engineering to product taught me that the best solutions come from understanding both code and humans.
+            </p>
+            
+            <div class="about-highlights">
+              <div class="highlight">
+                <strong>9+ years</strong>
+                <span>in tech</span>
+              </div>
+              <div class="highlight">
+                <strong>Empathy First</strong>
+                <span>approach</span>
+              </div>
+              <div class="highlight">
+                <strong>Impact Driven</strong>
+                <span>mindset</span>
+              </div>
             </div>
-            <div style="background:var(--light); padding: 2rem; border-radius: 12px;">
-                <h4 style="margin-bottom:1rem;">Beyond Work</h4>
-                <ul style="list-style:none; font-size: 0.9rem; color: var(--accent);">
-                    <li style="margin-bottom:0.5rem;">🎸 Indie music & guitar</li>
-                    <li style="margin-bottom:0.5rem;">🏋️ Strength training</li>
-                    <li>☕ Masala chai enthusiast</li>
-                </ul>
+
+            <!-- Simple Beliefs - Replaced Framework -->
+            <div class="beliefs">
+              <p>I listen more than I talk. The best insights come from users, not assumptions.</p>
+              <p>Complexity should be handled by the system, not felt by the user.</p>
+              <p>Great products solve real problems for real people.</p>
+            </div>
+
+            <div class="skills-minimal">
+              <h4>What I Do</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">User Research</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Execution</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-sidebar">
+            <div class="fun-facts">
+              <h4>Beyond Work</h4>
+              <ul>
+                <li><a href="https://chambalguy.com" target="_blank" class="music-link">🎸 Write and play music</a></li>
+                <li>🏋️ Love strength training</li>
+                <li>👨‍🍳 Experiment with cooking</li>
+                <li>☕ Masala chai enthusiast</li>
+                <li>🚀 Build side projects</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
+    <!-- Contact - Human Connection -->
+    <section id="contact" class="section section-alt">
+      <div class="section-content">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-intro">
+          If you're building something meaningful or just want to chat about products, 
+          I'd love to hear from you. No buzzwords, just real talk.
+        </p>
+        
+        <div class="contact-actions">
+          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-large">
+            Send me an email
+          </a>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/somanshu-agarwal/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/somanshu-agarwal" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimal Footer -->
     <footer class="footer">
-      <p>Built with care and too much masala chai © 2026 Somanshu Agarwal</p>
+      <div class="footer-content">
+        <p>Built with care and too much masala chai</p>
+        <p>© 2024 Somanshu Agarwal</p>
+      </div>
     </footer>
   </div>
 
-  <script>
-    /* JS - The Data & Logic */
-    const DATA = {
-        work: [
-            {
-                title: "FinTech Q2C Transformation",
-                company: "FIS • 2024",
-                desc: "Modernized quote-to-cash for global fintech via Azure middleware.",
-                metrics: [["60%", "Faster"], ["6+", "Integrations"]],
-                tags: ["Azure", "Enterprise"]
-            },
-            {
-                title: "B2B Workflow Automation",
-                company: "Sago • 2023",
-                desc: "Automated RFQ-to-Invoice for international teams. Reduced manual work.",
-                metrics: [["30%", "Less Manual"], ["10d", "Faster Cycle"]],
-                tags: ["Automation", "Salesforce"]
-            }
-        ],
-        vibe: [
-            {
-                title: "Purushartha App",
-                desc: "Life manager inspired by Indian philosophy. Balancing Dharma and Artha.",
-                link: "https://purushartha.expo.app/",
-                tags: ["React Native", "Philosophy"]
-            },
-            {
-                title: "BareMinimum",
-                desc: "B2C personal finance app for mindful, zero-based budgeting.",
-                link: "https://github.com/somanshu-agarwal/bareminimum",
-                tags: ["React", "Finance"]
-            }
-        ],
-        design: [
-            {
-                title: "BidCube UX Revamp",
-                desc: "Complete redesign of bidding management tool strategy and UI flow.",
-                link: "https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp",
-                tags: ["Figma", "UX Strategy"]
-            }
-        ],
-        writing: [
-            {
-                title: "Dharma in Product Design",
-                date: "Feb 15, 2026",
-                excerpt: "Applying ancient philosophy to rethink ethical user retention.",
-                link: "https://blogbysomanshu.substack.com/"
-            }
-        ]
-    };
-
-    function renderAll() {
-        // Render Work
-        document.getElementById('work-grid').innerHTML = DATA.work.map(p => `
-            <div class="project-card">
-                <div>
-                    <div class="project-header"><h3>${p.title}</h3><span class="tag">${p.company}</span></div>
-                    <p style="font-size:0.9rem; color: #444;">${p.desc}</p>
-                    <div class="project-metrics">
-                        ${p.metrics.map(m => `<div class="metric"><span class="metric-value">${m[0]}</span><span class="metric-label">${m[1]}</span></div>`).join('')}
-                    </div>
-                </div>
-                <div>${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-            </div>
-        `).join('');
-
-        // Render Vibe Coding
-        document.getElementById('vibe-grid').innerHTML = DATA.vibe.map(p => `
-            <div class="project-card">
-                <h3>${p.title}</h3>
-                <p style="font-size:0.9rem; color: #444; margin: 1rem 0;">${p.desc}</p>
-                <a href="${p.link}" target="_blank" class="btn btn-secondary btn-small">View ↗</a>
-            </div>
-        `).join('');
-
-        // Render Design
-        document.getElementById('design-grid').innerHTML = DATA.design.map(p => `
-            <div class="project-card">
-                <h3>${p.title}</h3>
-                <p style="font-size:0.9rem; color: #444; margin: 1rem 0;">${p.desc}</p>
-                <a href="${p.link}" target="_blank" class="btn btn-secondary btn-small">Figma ↗</a>
-            </div>
-        `).join('');
-
-        // Render Writing
-        document.getElementById('substack-feed').innerHTML = DATA.writing.map(post => `
-            <article style="margin-bottom: 2rem;">
-                <span style="color:#999; font-size:0.8rem;">${post.date}</span>
-                <a href="${post.link}" target="_blank" style="text-decoration:none; color:inherit;"><h3>${post.title}</h3></a>
-                <p style="color:var(--accent); font-size:0.9rem;">${post.excerpt}</p>
-            </article>
-        `).join('');
-    }
-
-    document.addEventListener('DOMContentLoaded', renderAll);
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
