@@ -3,1069 +3,395 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Somanshu Agarwal — Dispatch</title>
-  <meta name="description" content="Daily dispatches on product, tech, AI, and everything in between. By Somanshu Agarwal." />
+  <title>Somanshu - Product Manager</title>
+  <meta name="description" content="Product Manager bridging technology and business. Building products users love while driving measurable impact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --parchment: #FEFAE0;
-      --parchment-dark: #f5f0cc;
-      --terracotta: #BC6C25;
-      --sage: #606C38;
-      --golden-hour: #D4A373;
-      --ink: #1a1a18;
-      --ink-light: rgba(26,26,24,0.55);
-      --border: rgba(188,108,37,0.2);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--parchment);
-      color: var(--ink);
-      font-family: Georgia, 'Times New Roman', serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    /* ─── MASTHEAD ─── */
-    .masthead {
-      border-bottom: 3px solid var(--ink);
-      padding: 2rem 3rem 0;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .masthead-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-    .masthead-meta {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      color: var(--ink-light);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .masthead-nav {
-      display: flex;
-      gap: 1.5rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .masthead-nav a {
-      color: var(--ink-light);
-      transition: color 0.2s;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-    }
-    .masthead-nav a:hover { color: var(--terracotta); border-color: var(--terracotta); }
-
-    .masthead-title {
-      text-align: center;
-      padding: 1.5rem 0 1rem;
-    }
-    .publication-name {
-      font-family: Georgia, serif;
-      font-weight: 700;
-      font-size: clamp(3rem, 8vw, 6rem);
-      letter-spacing: -3px;
-      line-height: 0.95;
-      color: var(--ink);
-    }
-    .publication-name span { color: var(--terracotta); font-style: italic; }
-    .publication-tagline {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      margin-top: 0.75rem;
-    }
-
-    .masthead-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 0;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      border-top: 1px solid var(--border);
-    }
-    .edition-tag {
-      background: var(--terracotta);
-      color: var(--parchment);
-      padding: 2px 8px;
-      font-size: 0.55rem;
-      letter-spacing: 2px;
-    }
-
-    /* ─── MAIN LAYOUT ─── */
-    .newspaper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 3rem;
-    }
-
-    /* ─── FEATURED / LEAD STORY ─── */
-    .lead-story {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 2px solid var(--ink);
-      margin-bottom: 2.5rem;
-      cursor: pointer;
-    }
-    .lead-story:hover .lead-title { color: var(--terracotta); }
-
-    .lead-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .lead-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--terracotta);
-      opacity: 0.3;
-    }
-
-    .lead-title {
-      font-family: Georgia, serif;
-      font-weight: 700;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      line-height: 1.1;
-      letter-spacing: -1px;
-      margin-bottom: 1rem;
-      transition: color 0.2s;
-    }
-    .lead-dek {
-      font-size: 1.1rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 1.5rem;
-    }
-    .lead-byline {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-    .lead-byline span { color: var(--terracotta); }
-
-    .lead-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--parchment-dark);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      min-height: 280px;
-    }
-    .lead-visual-text {
-      font-family: Georgia, serif;
-      font-size: 8rem;
-      font-weight: 700;
-      color: var(--border);
-      line-height: 1;
-      font-style: italic;
-      user-select: none;
-    }
-    .lead-visual-tag {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background: var(--terracotta);
-      color: var(--parchment);
-      padding: 3px 8px;
-    }
-
-    /* ─── COLUMNS GRID ─── */
-    .columns-header {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      text-align: center;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .columns-header::before, .columns-header::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
-      margin-bottom: 2.5rem;
-    }
-
-    .column-story {
-      padding: 1.75rem;
-      border-right: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.15s;
-      position: relative;
-    }
-    .column-story:last-child { border-right: none; }
-    .column-story:hover { background: var(--parchment-dark); }
-    .column-story::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--terracotta);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s ease;
-    }
-    .column-story:hover::before { transform: scaleX(1); }
-
-    .story-section {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 0.6rem;
-    }
-    .story-title {
-      font-family: Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 0.75rem;
-      color: var(--ink);
-    }
-    .column-story:hover .story-title { color: var(--terracotta); }
-    .story-dek {
-      font-size: 0.875rem;
-      color: var(--ink-light);
-      line-height: 1.65;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-    .story-meta {
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 1px;
-      color: var(--ink-light);
-      text-transform: uppercase;
-      border-top: 1px solid var(--border);
-      padding-top: 0.75rem;
-      margin-top: auto;
-    }
-
-    /* ─── BOTTOM ROW: BRIEF + SIDEBAR ─── */
-    .bottom-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2.5rem;
-      padding-top: 2.5rem;
-      border-top: 2px solid var(--ink);
-      margin-bottom: 2.5rem;
-    }
-
-    /* BRIEFS — short posts */
-    .briefs-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--ink);
-    }
-    .brief-item {
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      gap: 1rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .brief-item:hover { background: var(--parchment-dark); margin: 0 -0.5rem; padding: 1.25rem 0.5rem; }
-    .brief-num {
-      font-family: Georgia, serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--border);
-      line-height: 1;
-      padding-top: 2px;
-    }
-    .brief-content {}
-    .brief-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 0.25rem;
-    }
-    .brief-title {
-      font-family: Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 0.25rem;
-    }
-    .brief-item:hover .brief-title { color: var(--terracotta); }
-    .brief-excerpt {
-      font-size: 0.82rem;
-      color: var(--ink-light);
-      font-style: italic;
-      line-height: 1.5;
-    }
-
-    /* SIDEBAR */
-    .sidebar {}
-    .sidebar-block {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .sidebar-block:last-child { border-bottom: none; }
-    .sidebar-title {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--ink);
-    }
-    .sidebar-about p {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-      font-style: italic;
-      margin-bottom: 1rem;
-    }
-    .sidebar-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .sidebar-link {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      padding: 0.4rem 0;
-      border-bottom: 1px dotted var(--border);
-      display: flex;
-      justify-content: space-between;
-      transition: color 0.2s;
-    }
-    .sidebar-link:hover { color: var(--terracotta); }
-    .sidebar-link span { opacity: 0.4; }
-
-    .topics-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .topic-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      color: var(--sage);
-      padding: 0.25rem 0.6rem;
-      cursor: default;
-      transition: all 0.15s;
-    }
-    .topic-tag:hover { background: var(--terracotta); color: var(--parchment); border-color: var(--terracotta); }
-
-    /* ─── PORTFOLIO FOOTNOTE ─── */
-    .portfolio-footnote {
-      border-top: 3px solid var(--ink);
-      padding: 3rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .footnote-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-    .footnote-header h2 {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      white-space: nowrap;
-    }
-    .footnote-rule { flex: 1; height: 1px; background: var(--border); }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .portfolio-item {
-      border: 1px solid var(--border);
-      padding: 1.25rem;
-      transition: border-color 0.2s;
-    }
-    .portfolio-item:hover { border-color: var(--terracotta); }
-    .portfolio-item h3 {
-      font-family: Georgia, serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      color: var(--ink);
-    }
-    .portfolio-item .co {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 0.6rem;
-    }
-    .portfolio-item p {
-      font-size: 0.8rem;
-      color: var(--ink-light);
-      font-style: italic;
-      line-height: 1.55;
-      margin-bottom: 0.75rem;
-    }
-    .portfolio-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .p-link {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--sage);
-      border: 1px solid rgba(96,108,56,0.3);
-      padding: 2px 6px;
-      transition: all 0.15s;
-    }
-    .p-link:hover { background: var(--terracotta); color: var(--parchment); border-color: var(--terracotta); }
-
-    /* ─── NEWSPAPER FOOTER ─── */
-    .paper-footer {
-      background: var(--ink);
-      color: var(--parchment);
-      padding: 2.5rem 3rem;
-    }
-    .paper-footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(254,250,224,0.1);
-      margin-bottom: 1.5rem;
-    }
-    .paper-footer h4 {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--golden-hour);
-      margin-bottom: 1rem;
-    }
-    .paper-footer p, .paper-footer a {
-      font-size: 0.85rem;
-      color: rgba(254,250,224,0.55);
-      font-style: italic;
-      line-height: 1.7;
-      display: block;
-      margin-bottom: 0.4rem;
-      transition: color 0.2s;
-    }
-    .paper-footer a:hover { color: var(--golden-hour); }
-    .paper-footer-bottom {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(254,250,224,0.25);
-    }
-
-    /* ─── MODAL ─── */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(254,250,224,0.98);
-      z-index: 1000;
-      display: none;
-      overflow-y: auto;
-      padding: 4rem 2rem;
-    }
-    .modal-overlay.open { display: block; }
-    .modal-inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .modal-back {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s;
-    }
-    .modal-back:hover { color: var(--terracotta); }
-    .modal-section {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 1rem;
-    }
-    .modal-title {
-      font-family: Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-    }
-    .modal-dek {
-      font-size: 1.2rem;
-      color: var(--ink-light);
-      font-style: italic;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    .modal-byline {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--ink-light);
-      padding-bottom: 1.5rem;
-      border-bottom: 2px solid var(--ink);
-      margin-bottom: 2.5rem;
-    }
-    .modal-byline span { color: var(--terracotta); }
-    .modal-body p {
-      font-size: 1.1rem;
-      color: var(--ink);
-      line-height: 1.9;
-      margin-bottom: 1.5rem;
-      opacity: 0.85;
-    }
-    .modal-body h3 {
-      font-family: Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--terracotta);
-      font-style: italic;
-      margin: 2.5rem 0 0.75rem;
-    }
-    .modal-body strong { color: var(--ink); opacity: 1; font-weight: 700; }
-
-    @media (max-width: 900px) {
-      .masthead, .newspaper, .portfolio-footnote { padding: 1.5rem; }
-      .lead-story { grid-template-columns: 1fr; }
-      .lead-visual { min-height: 160px; }
-      .columns { grid-template-columns: 1fr; }
-      .column-story { border-right: none; border-bottom: 1px solid var(--border); }
-      .column-story:last-child { border-bottom: none; }
-      .bottom-row { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: 1fr 1fr; }
-      .paper-footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-      .paper-footer-bottom { flex-direction: column; gap: 0.5rem; }
-      .masthead-nav { gap: 1rem; }
-    }
-    @media (max-width: 600px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .masthead-top { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div id="app">
+    <!-- Minimal Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-mark">SA</div>
+        </div>
+          <nav class="nav">
+            <a href="#work">Work</a>
+            <a href="#vibecoding">Vibe Coding</a>
+            <a href="#design">Design</a>
+            <a href="#writing">Writing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+      </div>
+    </header>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-inner">
-    <button class="modal-back" onclick="closeModal()">← Back to Dispatch</button>
-    <div class="modal-section" id="mSection"></div>
-    <h1 class="modal-title" id="mTitle"></h1>
-    <p class="modal-dek" id="mDek"></p>
-    <div class="modal-byline">By <span>Somanshu Agarwal</span> &nbsp;·&nbsp; <span id="mDate"></span></div>
-    <div class="modal-body" id="mBody"></div>
+    <!-- Hero - Human Focused -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-image">
+          <img src="assets/profile.jpg" alt="Somanshu Agarwal" onerror="this.style.display='none'">
+          <div class="image-fallback">SA</div>
+        </div>
+        <h1 class="hero-greeting">Hi, I'm Somanshu</h1>
+        <h2 class="hero-title">
+          I build products that 
+          <span class="title-accent">people actually love</span>
+        </h2>
+          <p class="hero-subtitle">
+           Started with code, fell in love with people<br>
+           Now I build products that make life better
+          </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">See my work</a>
+          <a href="#contact" class="btn btn-secondary">Let's talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work - Human Stories -->
+<section id="work" class="section">
+  <div class="section-content">
+    <h2 class="section-title">My Work</h2>
+    
+    <div class="projects">
+      <!-- Project 1 - FinTech -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>FinTech Q2C Transformation</h3>
+          <span class="project-year">FIS • 2024</span>
+        </div>
+        <p class="project-description">
+          Modernized quote-to-cash for global fintech, connecting enterprise systems via Azure middleware. 
+          Impacted multi-million dollar revenue streams.
+        </p>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">60%</span>
+            <span class="metric-label">faster invoicing</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">6+</span>
+            <span class="metric-label">integrations</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Azure</span>
+          <span class="tag">Middleware</span>
+          <span class="tag">Enterprise</span>
+          <span class="tag">Q2C</span>
+        </div>
+      </div>
+
+      <!-- Project 2 - B2B Automation -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>B2B Workflow Automation</h3>
+          <span class="project-year">Sago • 2023</span>
+        </div>
+        <p class="project-description">
+          Automated RFQ-to-Invoice for international teams. Reduced manual work by 30% 
+          and improved data accuracy across sales systems.
+        </p>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">30%</span>
+            <span class="metric-label">less manual work</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">10 days</span>
+            <span class="metric-label">faster cycle</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Automation</span>
+          <span class="tag">B2B</span>
+          <span class="tag">APIs</span>
+          <span class="tag">Salesforce</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Vibe Coding Section -->
+<section id="vibecoding" class="section section-alt">
+  <div class="section-content">
+    <h2 class="section-title">Vibe Coding</h2>
+    <p class="contact-intro" style="margin-bottom: 3rem; text-align: center;">
+      Passion projects built for fun, learning, and solving everyday problems
+    </p>
+    
+    <div class="projects">
+      <!-- Purushartha App -->
+<div class="project-card">
+  <div class="project-header">
+    <h3>Purushartha App</h3>
+    <span class="project-year">Side Project • 2024</span>
+  </div>
+  <p class="project-description">
+    A daily life manager app inspired by ancient Indian philosophy. Helps users balance the four Purusharthas 
+    (Dharma, Artha, Kama, Moksha) through daily tracking, reflection, and mindful habit building.
+  </p>
+  <div class="project-metrics">
+    <div class="metric">
+      <span class="metric-value">4</span>
+      <span class="metric-label">life pillars</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">Daily</span>
+      <span class="metric-label">tracking</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">Mindful</span>
+      <span class="metric-label">living</span>
+    </div>
+  </div>
+  <div class="project-actions">
+    <a href="https://purushartha.expo.app/" class="btn btn-small btn-primary" target="_blank">
+      Live Prototype ↗
+    </a>
+    <a href="https://github.com/somanshu-agarwal/purushartha" class="btn btn-small" target="_blank">
+      View Code
+    </a>
+  </div>
+  <div class="project-tags">
+    <span class="tag">React Native</span>
+    <span class="tag">Mindfulness</span>
+    <span class="tag">Daily Tracking</span>
+    <span class="tag">Philosophy</span>
   </div>
 </div>
 
-<!-- MASTHEAD -->
-<div class="masthead">
-  <div class="masthead-top">
-    <div class="masthead-meta" id="todayDate"></div>
-    <nav class="masthead-nav">
-      <a href="#writing">Writing</a>
-      <a href="#about-me">About</a>
-      <a href="#portfolio">Work</a>
-      <a href="https://chambalguy.com" target="_blank">Music</a>
-      <a href="mailto:somanshu.agarwal01@gmail.com">Contact</a>
-    </nav>
-  </div>
-  <div class="masthead-title">
-    <h1 class="publication-name">The <span>Dispatch</span></h1>
-    <p class="publication-tagline">Product · Technology · Random Learnings · By Somanshu Agarwal</p>
-  </div>
-  <div class="masthead-strip">
-    <span>Pune, India</span>
-    <span class="edition-tag">Daily Edition</span>
-    <span>somanshu.space</span>
-  </div>
-</div>
-
-<!-- NEWSPAPER BODY -->
-<div class="newspaper" id="writing">
-
-  <!-- LEAD STORY -->
-  <div class="lead-story" onclick="openPost(0)">
-    <div>
-      <div class="lead-label">Lead Story · AI & Product</div>
-      <h2 class="lead-title">AI Won't Kill Product Managers. Bad PMs Will.</h2>
-      <p class="lead-dek">Everyone's scared. I get it. But here's my actual take after a year using AI tools and watching enterprise companies deploy this stuff in the wild.</p>
-      <div class="lead-byline">By <span>Somanshu Agarwal</span> &nbsp;·&nbsp; Feb 2026 &nbsp;·&nbsp; 6 min read</div>
-    </div>
-    <div class="lead-visual">
-      <div class="lead-visual-text">AI</div>
-      <span class="lead-visual-tag">Featured</span>
-    </div>
-  </div>
-
-  <!-- 3 COLUMN STORIES -->
-  <div class="columns-header">Latest Dispatches</div>
-  <div class="columns">
-    <div class="column-story" onclick="openPost(1)">
-      <div class="story-section">Q2C · Enterprise</div>
-      <h3 class="story-title">Q2C Is The Most Underrated Domain In Enterprise Tech</h3>
-      <p class="story-dek">Every rupee a company makes passes through Q2C. And most PMs avoid it like it's boring. It's not. It's everything.</p>
-      <div class="story-meta">
-        <span>Jan 2026</span>
-        <span>5 min →</span>
-      </div>
-    </div>
-    <div class="column-story" onclick="openPost(2)">
-      <div class="story-section">Career · Reflection</div>
-      <h3 class="story-title">From COBOL to CPQ: A Decade In Tech</h3>
-      <p class="story-dek">I started writing mainframe code for a European bank in 2014. Here's the messy, non-linear truth of how I got from there to here.</p>
-      <div class="story-meta">
-        <span>Dec 2025</span>
-        <span>7 min →</span>
-      </div>
-    </div>
-    <div class="column-story" onclick="openPost(3)">
-      <div class="story-section">Philosophy · Life</div>
-      <h3 class="story-title">Purushartha: Ancient Framework, Modern Life</h3>
-      <p class="story-dek">I built an app based on four Sanskrit words. Then realised those words said more about my career anxiety than any self-help book ever did.</p>
-      <div class="story-meta">
-        <span>Nov 2025</span>
-        <span>4 min →</span>
+      <!-- BareMinimum App (Moved from Work) -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>BareMinimum App</h3>
+          <span class="project-year">Side Project • 2024</span>
+        </div>
+        <p class="project-description">
+          B2C personal finance app for mindful spending. Built from discovery to launch, 
+          solving real user pain points around budget anxiety and financial overwhelm.
+        </p>
+        <div class="project-metrics">
+          <div class="metric">
+            <span class="metric-value">Zero-based</span>
+            <span class="metric-label">budgeting</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">Mindful</span>
+            <span class="metric-label">spending</span>
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/somanshu-agarwal/bareminimum" class="btn btn-small" target="_blank">
+            View Code
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">B2C</span>
+          <span class="tag">React</span>
+          <span class="tag">User Research</span>
+          <span class="tag">Personal Finance</span>
+        </div>
       </div>
     </div>
   </div>
+</section>    
 
-  <!-- BRIEFS + SIDEBAR -->
-  <div class="bottom-row">
-    <div>
-      <div class="briefs-title">Also In This Edition</div>
-
-      <div class="brief-item" onclick="openPost(4)">
-        <div class="brief-num">01</div>
-        <div class="brief-content">
-          <div class="brief-tag">Product Craft</div>
-          <div class="brief-title">The Canonical Data Model Nobody Talks About</div>
-          <p class="brief-excerpt">PMs obsess over roadmaps. Nobody talks about data models. That's exactly why most enterprise integrations fail.</p>
+<!-- Design & Strategy Section -->
+<section id="design" class="section section-alt">
+  <div class="section-content">
+    <h2 class="section-title">Design & Strategy</h2>
+    
+    <div class="projects">
+      <!-- BidCube Design -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>BidCube UX Revamp</h3>
+          <span class="project-year">Sago • 2023</span>
+        </div>
+        <p class="project-description">
+          Complete redesign of bidding management tool. Included functional flow analysis, current state challenges, and future state vision across all modules.
+        </p>
+        <div class="project-actions">
+          <a href="https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp?t=j8CLTMzGcsZv7kMw-1" 
+             class="btn btn-small" target="_blank">
+            View Strategy Board
+          </a>
+          <a href="https://www.figma.com/proto/YGKjPkEatHKjhqae5Wa6M8/Bid-Cube-Revamp-Designs--Copy-?node-id=195-3257&p=f&t=nsC80Qlrx791uRGp-1&scaling=scale-down&content-scaling=responsive&page-id=103%3A242&starting-point-node-id=195%3A3257" 
+             class="btn btn-small" target="_blank">
+            View UI Designs
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Figma</span>
+          <span class="tag">User Journey</span>
+          <span class="tag">B2B SaaS</span>
+          <span class="tag">UX Design</span>
         </div>
       </div>
 
-      <div class="brief-item" onclick="openPost(5)">
-        <div class="brief-num">02</div>
-        <div class="brief-content">
-          <div class="brief-tag">AI · Learning</div>
-          <div class="brief-title">Six Months Into An IIT Madras GenAI Program: What I've Actually Learned</div>
-          <p class="brief-excerpt">Not a course review. More of an honest reckoning with what changes when you actually commit to understanding this stuff.</p>
+      <!-- Sukanya Calculator -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Sukanya Samriddhi Calculator</h3>
+          <span class="project-year">Jagran • 2021</span>
+        </div>
+        <p class="project-description">
+          Designed user journey and interface for financial calculator helping parents plan for daughters' education. Simplified complex financial planning into intuitive workflows.
+        </p>
+        <div class="project-actions">
+          <a href="https://www.figma.com/proto/4wTt0Xpeavnv2VHBrp1Jwu/Untitled?node-id=1-2&p=f&t=DOn2pe4TTVmOmYax-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" 
+             class="btn btn-small" target="_blank">
+            View Prototype
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">User Journey</span>
+          <span class="tag">Financial UX</span>
+          <span class="tag">Calculator Design</span>
+          <span class="tag">B2C</span>
         </div>
       </div>
 
-      <div class="brief-item" onclick="openPost(6)">
-        <div class="brief-num">03</div>
-        <div class="brief-content">
-          <div class="brief-tag">Work · Life</div>
-          <div class="brief-title">Why I Keep Making Side Projects Nobody Uses</div>
-          <p class="brief-excerpt">Purushartha. BareMinimum. Three apps before that. None of them took off. Here's why I keep building anyway.</p>
+      <!-- Indie Music Website -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3>Indie Music News Platform</h3>
+          <span class="project-year">Side Project • 2024</span>
+        </div>
+        <p class="project-description">
+          Designed a modern platform for independent music discovery. Focused on artist storytelling and community engagement through intuitive UI/UX.
+        </p>
+        <div class="project-actions">
+          <a href="https://www.figma.com/proto/A1TmSuheLTBh8a9zPkxA2i/INDIE-NEWS?node-id=12-934&p=f&t=nxGbr3IvViGdw4zh-1&scaling=contain&content-scaling=responsive&page-id=0%3A1" 
+             class="btn btn-small" target="_blank">
+            View Prototype
+          </a>
+        </div>
+        <div class="project-tags">
+          <span class="tag">UI/UX</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">Visual Design</span>
         </div>
       </div>
-
-      <div class="brief-item" onclick="openPost(7)">
-        <div class="brief-num">04</div>
-        <div class="brief-content">
-          <div class="brief-tag">Random Learnings</div>
-          <div class="brief-title">What Lifting Weights Taught Me About Shipping Product</div>
-          <p class="brief-excerpt">Progressive overload. Consistency over intensity. Form before weight. Turns out the gym has been teaching me PM principles for years.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- SIDEBAR -->
-    <div class="sidebar" id="about-me">
-
-      <div class="sidebar-block">
-        <div class="sidebar-title">About The Writer</div>
-        <div class="sidebar-about">
-          <p>Somanshu Agarwal. Product Owner & Systems Lead at FIS Global, Pune. 9 years navigating the space between enterprise systems and human beings.</p>
-          <p>CSPO & CSM certified. Currently deep in a GenAI program at IIT Madras. Also makes music as <a href="https://chambalguy.com" target="_blank" style="color:var(--terracotta);border-bottom:1px solid var(--golden-hour);">Chambal Guy</a>.</p>
-        </div>
-      </div>
-
-      <div class="sidebar-block">
-        <div class="sidebar-title">Find Me Here</div>
-        <div class="sidebar-links">
-          <a href="https://www.linkedin.com/in/somanshu-agarwal/" target="_blank" class="sidebar-link">LinkedIn <span>↗</span></a>
-          <a href="https://github.com/somanshu-agarwal" target="_blank" class="sidebar-link">GitHub <span>↗</span></a>
-          <a href="https://chambalguy.com" target="_blank" class="sidebar-link">Chambal Guy (Music) <span>↗</span></a>
-          <a href="https://blogbysomanshu.substack.com/" target="_blank" class="sidebar-link">Substack Archive <span>↗</span></a>
-          <a href="mailto:somanshu.agarwal01@gmail.com" class="sidebar-link">Email Me <span>→</span></a>
-        </div>
-      </div>
-
-      <div class="sidebar-block">
-        <div class="sidebar-title">Topics Covered</div>
-        <div class="topics-list">
-          <span class="topic-tag">Product</span>
-          <span class="topic-tag">AI</span>
-          <span class="topic-tag">Q2C</span>
-          <span class="topic-tag">Enterprise</span>
-          <span class="topic-tag">Career</span>
-          <span class="topic-tag">Agile</span>
-          <span class="topic-tag">Music</span>
-          <span class="topic-tag">Philosophy</span>
-          <span class="topic-tag">Side Projects</span>
-          <span class="topic-tag">Gym</span>
-          <span class="topic-tag">India Tech</span>
-          <span class="topic-tag">Learning</span>
-        </div>
-      </div>
-
     </div>
   </div>
+</section>
 
-</div>
+        <!-- Writing Section -->
+    <section id="writing" class="section">
+      <div class="section-content">
+        <h2 class="section-title">My Writing</h2>
+        <p class="contact-intro" style="margin-bottom: 3rem;">
+          I write about product, life, and the messiness of building things. 
+          <a href="https://blogbysomanshu.substack.com/" target="_blank" style="color: #000; text-decoration: underline;">Read on Substack ↗</a>
+        </p>
+        
+        <div id="substack-feed" class="projects">
+          <div class="project-card" style="text-align: center; opacity: 0.5;">
+            <p>Loading latest thoughts...</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- PORTFOLIO FOOTNOTE -->
-<div class="portfolio-footnote" id="portfolio">
-  <div class="footnote-header">
-    <h2>The Work — Portfolio</h2>
-    <div class="footnote-rule"></div>
+    <!-- About - Human Approach -->
+    <section id="about" class="section">
+      <div class="section-content">
+        <h2 class="section-title">My Approach</h2>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-intro">
+              I believe technology should serve people, not the other way around. 
+              My journey from engineering to product taught me that the best solutions come from understanding both code and humans.
+            </p>
+            
+            <div class="about-highlights">
+              <div class="highlight">
+                <strong>9+ years</strong>
+                <span>in tech</span>
+              </div>
+              <div class="highlight">
+                <strong>Empathy First</strong>
+                <span>approach</span>
+              </div>
+              <div class="highlight">
+                <strong>Impact Driven</strong>
+                <span>mindset</span>
+              </div>
+            </div>
+
+            <!-- Simple Beliefs - Replaced Framework -->
+            <div class="beliefs">
+              <p>I listen more than I talk. The best insights come from users, not assumptions.</p>
+              <p>Complexity should be handled by the system, not felt by the user.</p>
+              <p>Great products solve real problems for real people.</p>
+            </div>
+
+            <div class="skills-minimal">
+              <h4>What I Do</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">User Research</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Execution</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-sidebar">
+            <div class="fun-facts">
+              <h4>Beyond Work</h4>
+              <ul>
+                <li><a href="https://chambalguy.com" target="_blank" class="music-link">🎸 Write and play music</a></li>
+                <li>🏋️ Love strength training</li>
+                <li>👨‍🍳 Experiment with cooking</li>
+                <li>☕ Masala chai enthusiast</li>
+                <li>🚀 Build side projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact - Human Connection -->
+    <section id="contact" class="section section-alt">
+      <div class="section-content">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-intro">
+          If you're building something meaningful or just want to chat about products, 
+          I'd love to hear from you. No buzzwords, just real talk.
+        </p>
+        
+        <div class="contact-actions">
+          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-large">
+            Send me an email
+          </a>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/somanshu-agarwal/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/somanshu-agarwal" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Built with care and too much masala chai</p>
+        <p>© 2024 Somanshu Agarwal</p>
+      </div>
+    </footer>
   </div>
-  <div class="portfolio-grid">
 
-    <div class="portfolio-item">
-      <div class="co">FIS Global · 2024–Present</div>
-      <h3>FinTech Q2C Transformation</h3>
-      <p>Owning backlog for Corporate Integrations. Azure middleware, Canonical Data Models, SAFe Agile. 60% faster invoicing.</p>
-      <div class="portfolio-links">
-        <span class="p-link">Q2C</span>
-        <span class="p-link">Azure</span>
-        <span class="p-link">Salesforce CPQ</span>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Sago · 2021–2024</div>
-      <h3>B2B Workflow Automation</h3>
-      <p>3 product backlogs. Supplier Cube Portal. RFQ-to-Invoice automation. 30% less manual work.</p>
-      <div class="portfolio-links">
-        <span class="p-link">Product Ownership</span>
-        <span class="p-link">APIs</span>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Jagran New Media · 2021</div>
-      <h3>Digital News Products</h3>
-      <p>Jagran Hindi & VishvasNews.com. 100K+ monthly users. A/B testing, UX research, roadmap decisions.</p>
-      <div class="portfolio-links">
-        <span class="p-link">Mobile Products</span>
-        <span class="p-link">Analytics</span>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Side Projects · 2024</div>
-      <h3>Vibe Coding</h3>
-      <p>Purushartha App (React Native). BareMinimum finance app. Indie Music News platform on Figma.</p>
-      <div class="portfolio-links">
-        <a href="https://purushartha.expo.app/" target="_blank" class="p-link">Live Prototype ↗</a>
-        <a href="https://github.com/somanshu-agarwal/purushartha" target="_blank" class="p-link">GitHub ↗</a>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Sago · 2023</div>
-      <h3>BidCube UX Revamp</h3>
-      <p>Full redesign of bidding management tool. Strategy board, functional flows, future state UI in Figma.</p>
-      <div class="portfolio-links">
-        <a href="https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp?t=j8CLTMzGcsZv7kMw-1" target="_blank" class="p-link">Strategy ↗</a>
-        <a href="https://www.figma.com/proto/YGKjPkEatHKjhqae5Wa6M8/Bid-Cube-Revamp-Designs--Copy-?node-id=195-3257&p=f&t=nsC80Qlrx791uRGp-1&scaling=scale-down&content-scaling=responsive&page-id=103%3A242&starting-point-node-id=195%3A3257" target="_blank" class="p-link">UI ↗</a>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Jagran · 2021</div>
-      <h3>Sukanya Calculator</h3>
-      <p>User journey and interface for a financial planning calculator helping parents save for daughters' education.</p>
-      <div class="portfolio-links">
-        <a href="https://www.figma.com/proto/4wTt0Xpeavnv2VHBrp1Jwu/Untitled?node-id=1-2&p=f&t=DOn2pe4TTVmOmYax-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" target="_blank" class="p-link">Prototype ↗</a>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Side Project · 2024</div>
-      <h3>Indie Music News Platform</h3>
-      <p>Designed a platform for indie music discovery. Artist storytelling, community engagement.</p>
-      <div class="portfolio-links">
-        <a href="https://www.figma.com/proto/A1TmSuheLTBh8a9zPkxA2i/INDIE-NEWS?node-id=12-934&p=f&t=nxGbr3IvViGdw4zh-1&scaling=contain&content-scaling=responsive&page-id=0%3A1" target="_blank" class="p-link">View ↗</a>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="co">Ongoing · Gwalior Roots</div>
-      <h3>Chambal Guy — Music</h3>
-      <p>Indie folk & rock. Album Ufaan (2025). EP yaqeen (2023, Rock Street Journal). Start with Chalein.</p>
-      <div class="portfolio-links">
-        <a href="https://chambalguy.com" target="_blank" class="p-link">chambalguy.com ↗</a>
-        <a href="https://www.youtube.com/watch?v=i5bBfejdjbY" target="_blank" class="p-link">Chalein ↗</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="paper-footer">
-  <div class="paper-footer-inner">
-    <div>
-      <h4>The Dispatch</h4>
-      <p>Daily thoughts on product, tech, AI, and everything in between. Written from Pune, India. No algorithm. No newsletter. Just honest writing.</p>
-    </div>
-    <div>
-      <h4>Writing</h4>
-      <a href="https://blogbysomanshu.substack.com/" target="_blank">Substack Archive ↗</a>
-      <a href="mailto:somanshu.agarwal01@gmail.com">somanshu.agarwal01@gmail.com</a>
-    </div>
-    <div>
-      <h4>Elsewhere</h4>
-      <a href="https://www.linkedin.com/in/somanshu-agarwal/" target="_blank">LinkedIn ↗</a>
-      <a href="https://github.com/somanshu-agarwal" target="_blank">GitHub ↗</a>
-      <a href="https://chambalguy.com" target="_blank">Chambal Guy ↗</a>
-    </div>
-  </div>
-  <div class="paper-footer-bottom">
-    <span>© 2026 Somanshu Agarwal</span>
-    <span>Built with masala chai & conviction</span>
-    <span>somanshu.space</span>
-  </div>
-</footer>
-
-<script>
-  // Date in masthead
-  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-  // Posts data
-  const POSTS = [
-    {
-      section: "AI · Product",
-      title: "AI Won't Kill Product Managers. Bad PMs Will.",
-      dek: "Everyone's scared. I get it. But here's my actual take after a year using AI tools.",
-      date: "February 2026 · 6 min read",
-      body: `<p>Everyone's scared. I get it. The headlines are relentless — AI is replacing jobs, companies are restructuring quietly, and people who used to feel safe suddenly aren't.</p>
-      <p>But here's what I actually think after a year using AI tools and watching how enterprise companies deploy this stuff: <strong>AI is not replacing good product managers. It's revealing bad ones.</strong></p>
-      <h3>What AI does well</h3>
-      <p>AI is extraordinary at pattern recognition, synthesis, summarisation, and generating first drafts. It can write user stories faster than you. It can summarise research. It can draft PRDs, spot gaps in acceptance criteria, generate test cases. All of this is real. If your job as a PM is to write tickets and maintain Jira boards, you should be thinking hard about this.</p>
-      <h3>What AI cannot do</h3>
-      <p>AI cannot sit in a PI Planning session and feel the tension in the room when two teams have a dependency neither wants to own. It cannot read the politics behind a stakeholder's "concerns." It cannot make the judgment call when the data says one thing and every instinct you've developed over nine years says another.</p>
-      <p><strong>The job of a product manager is judgment under uncertainty, with incomplete information, involving humans who have their own agendas.</strong> That's not going away. That's getting more important.</p>
-      <h3>What you should actually do</h3>
-      <p>Learn the tools. Use AI to do the repetitive stuff faster so you can spend more time on the things that require you. Build domain depth — specialisation is a moat. Write. Speak. Make your thinking visible. The future belongs to PMs who use AI as leverage. Not ones waiting to see if it goes away.</p>`
-    },
-    {
-      section: "Q2C · Enterprise",
-      title: "Q2C Is The Most Underrated Domain In Enterprise Tech",
-      dek: "Every rupee a company makes passes through Q2C. Most PMs avoid it. That's a mistake.",
-      date: "January 2026 · 5 min read",
-      body: `<p>Ask a PM what domain they want and you'll hear: fintech, health tech, consumer apps. Almost nobody says Quote-to-Cash. That's a mistake.</p>
-      <h3>What Q2C actually is</h3>
-      <p>Quote-to-Cash is the end-to-end process from when a salesperson builds a quote all the way through to revenue recognition. CPQ, order management, contracts, billing — all of it. In any large enterprise, this process is broken in at least three places and touches five different systems whose teams rarely agree on anything.</p>
-      <h3>Why it matters more than most realise</h3>
-      <p><strong>Every single rupee the company makes passes through Q2C.</strong> If it's slow, invoicing is late. If it's wrong, revenue recognition is off. The problems here are genuinely hard — data modelling, integration complexity, multi-currency, subscription vs transactional models. Not boring. High stakes.</p>
-      <h3>Why you should care</h3>
-      <p>Domain depth creates job security. A PM who deeply understands Q2C is extremely hard to replace — this knowledge takes years to build and cannot be faked. If you have a chance to go deep here — take it.</p>`
-    },
-    {
-      section: "Career · Reflection",
-      title: "From COBOL to CPQ: A Decade In Tech",
-      dek: "Started writing mainframe code in 2014. Here's the messy, non-linear truth of the journey.",
-      date: "December 2025 · 7 min read",
-      body: `<p>In 2014, I wrote my first production COBOL program for a European banking client at Accenture. The code ran on a mainframe. In 2024, I was leading PI Planning for a Q2C platform at FIS, designing Canonical Data Models, mentoring junior BAs. This is not a straight line.</p>
-      <h3>The technical foundation was everything</h3>
-      <p>I didn't love writing COBOL. But learning to think like a systems developer gave me something most product managers don't have: I can have a real conversation with an architect. Not "here's the requirement." An actual conversation about tradeoffs and what's genuinely hard.</p>
-      <h3>The MBA was useful for one thing</h3>
-      <p>Business school taught me stakeholder language. How finance people think. How marketing frames problems. Why a VP of Sales cares about things a developer doesn't. The two years gave me space to learn how businesses actually work.</p>
-      <h3>What I wish I'd known earlier</h3>
-      <p>Domain depth matters more than role title. I've seen Senior PMs who couldn't explain their product's business model. I've seen associate PMs who could map every integration touchpoint from memory. The second person always wins in the long run. <strong>Build, ship, write, speak. Make your thinking visible. That's the whole game.</strong></p>`
-    },
-    {
-      section: "Philosophy · Life",
-      title: "Purushartha: Ancient Framework, Modern Life",
-      dek: "Built an app based on four Sanskrit words. Turns out they knew more than I did.",
-      date: "November 2025 · 4 min read",
-      body: `<p>I built an app. It wasn't supposed to be a philosophy project — just a habit tracker with a twist, based on the ancient Indian concept of Purushartha. Then I started using it and realised how badly out of balance I was.</p>
-      <h3>The four Purusharthas</h3>
-      <p><strong>Dharma</strong> — Your duty, your purpose. What you're called to do.</p>
-      <p><strong>Artha</strong> — Material wellbeing. Career, money, security. The stuff most of us spend 90% of our energy on.</p>
-      <p><strong>Kama</strong> — Pleasure, joy. Music. Good food. Connection. The things that make life worth living beyond achievement.</p>
-      <p><strong>Moksha</strong> — Liberation, self-realisation. The long game. Hardest to define, easiest to neglect.</p>
-      <h3>What it revealed</h3>
-      <p>I was crushing Artha. Decent on Dharma. Completely neglecting Kama — hadn't played guitar in three months. And Moksha? No idea. The app didn't fix anything. But it made the imbalance visible. Sometimes the most useful tool just holds up a mirror.</p>`
-    },
-    {
-      section: "Product Craft",
-      title: "The Canonical Data Model Nobody Talks About",
-      dek: "PMs obsess over roadmaps. Nobody talks about data models. That's why integrations fail.",
-      date: "October 2025 · 5 min read",
-      body: `<p>PMs obsess over roadmaps, OKRs, prioritisation frameworks. Almost nobody talks about the Canonical Data Model. I think this is one of the biggest gaps in enterprise PM thinking.</p>
-      <h3>What it is</h3>
-      <p>A Canonical Data Model is a standardised representation that acts as the common language between systems. When System A speaks to System B, they translate to and from the canonical model. It's the Rosetta Stone of your integration architecture.</p>
-      <h3>Why PMs should care</h3>
-      <p>Because data architecture is product design. When you define what an "Opportunity" means — what fields it has, what states it can be in — you are making product decisions. Most PMs leave this entirely to architects and then wonder why integrations break six months later.</p>
-      <h3>What I actually do</h3>
-      <p>At FIS, I sit with architects when we design canonical models for new integrations. I'm not writing the schema. But I'm asking: what does the business need to know at each stage? What decisions does a human have to make? <strong>That's product thinking applied to data design.</strong> Next time you scope an integration — ask for the data model.</p>`
-    },
-    {
-      section: "AI · Learning",
-      title: "Six Months Into An IIT Madras GenAI Program: What I've Actually Learned",
-      dek: "Not a course review. An honest reckoning with what changes when you commit to understanding AI properly.",
-      date: "September 2025 · 5 min read",
-      body: `<p>I enrolled in the Advanced Executive Program in Applied Generative AI from IIT Madras via Simplilearn because I was tired of talking about AI without actually understanding it. Six months in, here's what's actually changed.</p>
-      <h3>What I expected</h3>
-      <p>Practical tools. Prompt engineering. Maybe some LLM theory. A certificate I could put on LinkedIn. That's what I expected.</p>
-      <h3>What I got instead</h3>
-      <p>A genuine shift in how I think about problems. Understanding transformers — even at a conceptual level — changes how you evaluate what AI can and cannot do. I stopped seeing AI as magic and started seeing it as a very sophisticated pattern-matching system with real limitations.</p>
-      <p>For a product manager, that's worth more than any certificate. Because now when someone says "we can just use AI for this," I can actually interrogate that claim.</p>
-      <h3>The unexpected benefit</h3>
-      <p><strong>It made me a better product thinker.</strong> Understanding AI limitations means understanding where human judgment is irreplaceable. And that's exactly the argument I now make when people worry AI will replace PMs. It won't replace the ones who understand it.</p>`
-    },
-    {
-      section: "Work · Life",
-      title: "Why I Keep Making Side Projects Nobody Uses",
-      dek: "Purushartha. BareMinimum. Three apps before that. None took off. Here's why I keep building.",
-      date: "August 2025 · 4 min read",
-      body: `<p>If I measured my side projects by users, I'd have quit years ago. Purushartha has a handful of users — most of them me. BareMinimum is on GitHub but I'm not sure anyone's cloned it. The music platform Figma prototype has never been built.</p>
-      <p>And I'm going to keep making things anyway. Here's why.</p>
-      <h3>Every project teaches you something the day job can't</h3>
-      <p>At FIS, I work within constraints — existing architecture, legacy systems, stakeholder buy-in. Side projects are the only place I make every single decision myself. That's uncomfortable and clarifying in equal measure.</p>
-      <h3>The process is the point</h3>
-      <p>Purushartha taught me React Native. BareMinimum taught me zero-based budgeting from the inside. The music platform taught me how hard it is to design for a domain you care about personally. None of these lessons came from reading about them.</p>
-      <h3>The bar isn't users. The bar is learning.</h3>
-      <p><strong>A side project that teaches you something real is a success.</strong> Stop measuring your personal projects by the same metrics you use at work. They serve a different purpose. Build because you're curious. Ship because shipping teaches you what planning never will.</p>`
-    },
-    {
-      section: "Random Learnings",
-      title: "What Lifting Weights Taught Me About Shipping Product",
-      dek: "Progressive overload. Form before weight. Consistency over intensity. The gym has been teaching me PM principles for years.",
-      date: "July 2025 · 3 min read",
-      body: `<p>I've been lifting seriously for a few years now. And somewhere between deadlifts and sprint retrospectives, I noticed the principles are basically identical.</p>
-      <h3>Progressive overload = incremental delivery</h3>
-      <p>You don't walk into a gym and try to lift your max. You add small amounts of weight consistently over time. The same applies to product delivery. The team that ships small, frequent improvements always outperforms the one that waits for the perfect release.</p>
-      <h3>Form before weight</h3>
-      <p>In the gym, bad form with heavy weight is how you get injured. In product, it's how you accumulate technical debt and build things nobody wants. <strong>Get the fundamentals right before you scale anything.</strong></p>
-      <h3>Consistency over intensity</h3>
-      <p>Three solid sessions a week beats one heroic session followed by a week of recovery. The same is true for product work. Sustainable pace, regular delivery, no crunch-and-crash cycles. The best teams I've worked with ship boring amounts of good work, consistently.</p>
-      <h3>Rest is part of the programme</h3>
-      <p>You grow during recovery, not during the workout. The best product insights I've had came during walks, not during standups. Build rest into the system.</p>`
-    }
-  ];
-
-  function openPost(i) {
-    const p = POSTS[i];
-    document.getElementById('mSection').textContent = p.section;
-    document.getElementById('mTitle').textContent = p.title;
-    document.getElementById('mDek').textContent = p.dek;
-    document.getElementById('mDate').textContent = p.date;
-    document.getElementById('mBody').innerHTML = p.body;
-    document.getElementById('modalOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    window.scrollTo(0, 0);
-  }
-
-  function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-</script>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
