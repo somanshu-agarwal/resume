@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Somanshu - Product Manager</title>
-  <meta name="description" content="Product Manager bridging technology and business. Building products users love while driving measurable impact." />
+  <meta name="description" content="Product Manager bridging technology and business." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,24 +12,20 @@
 </head>
 <body>
   <div id="app">
-    <!-- Minimal Header -->
     <header class="header">
       <div class="header-content">
-        <div class="logo">
-          <div class="logo-mark">SA</div>
-        </div>
-          <nav class="nav">
-            <a href="#work">Work</a>
-            <a href="#vibecoding">Vibe Coding</a>
-            <a href="#design">Design</a>
-            <a href="#writing">Writing</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </nav>
+        <div class="logo"><div class="logo-mark">SA</div></div>
+        <nav class="nav">
+          <a href="#work">Work</a>
+          <a href="#vibecoding">Vibe Coding</a>
+          <a href="#design">Design</a>
+          <a href="#writing">Writing</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </header>
 
-    <!-- Hero - Human Focused -->
     <section class="hero">
       <div class="hero-content">
         <div class="hero-image">
@@ -37,14 +33,8 @@
           <div class="image-fallback">SA</div>
         </div>
         <h1 class="hero-greeting">Hi, I'm Somanshu</h1>
-        <h2 class="hero-title">
-          I build products that 
-          <span class="title-accent">people actually love</span>
-        </h2>
-          <p class="hero-subtitle">
-           Started with code, fell in love with people<br>
-           Now I build products that make life better
-          </p>
+        <h2 class="hero-title">I build products that <span class="title-accent">people actually love</span></h2>
+        <p class="hero-subtitle">Started with code, fell in love with people. Now I build products that make life better.</p>
         <div class="hero-actions">
           <a href="#work" class="btn btn-primary">See my work</a>
           <a href="#contact" class="btn btn-secondary">Let's talk</a>
@@ -52,329 +42,82 @@
       </div>
     </section>
 
-    <!-- Work - Human Stories -->
-<section id="work" class="section">
-  <div class="section-content">
-    <h2 class="section-title">My Work</h2>
-    
-    <div class="projects">
-      <!-- Project 1 - FinTech -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>FinTech Q2C Transformation</h3>
-          <span class="project-year">FIS • 2024</span>
-        </div>
-        <p class="project-description">
-          Modernized quote-to-cash for global fintech, connecting enterprise systems via Azure middleware. 
-          Impacted multi-million dollar revenue streams.
-        </p>
-        <div class="project-metrics">
-          <div class="metric">
-            <span class="metric-value">60%</span>
-            <span class="metric-label">faster invoicing</span>
+    <section id="work" class="section">
+      <div class="section-content">
+        <h2 class="section-title">My Work</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>FinTech Q2C Transformation</h3>
+              <span class="project-year">FIS • 2024</span>
+            </div>
+            <p class="project-description">Modernized quote-to-cash for global fintech, connecting enterprise systems via Azure middleware.</p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-value">60%</span><span class="metric-label">faster invoicing</span></div>
+              <div class="metric"><span class="metric-value">6+</span><span class="metric-label">integrations</span></div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Azure</span><span class="tag">Middleware</span><span class="tag">Enterprise</span>
+            </div>
           </div>
-          <div class="metric">
-            <span class="metric-value">6+</span>
-            <span class="metric-label">integrations</span>
-          </div>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Azure</span>
-          <span class="tag">Middleware</span>
-          <span class="tag">Enterprise</span>
-          <span class="tag">Q2C</span>
-        </div>
-      </div>
 
-      <!-- Project 2 - B2B Automation -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>B2B Workflow Automation</h3>
-          <span class="project-year">Sago • 2023</span>
-        </div>
-        <p class="project-description">
-          Automated RFQ-to-Invoice for international teams. Reduced manual work by 30% 
-          and improved data accuracy across sales systems.
-        </p>
-        <div class="project-metrics">
-          <div class="metric">
-            <span class="metric-value">30%</span>
-            <span class="metric-label">less manual work</span>
-          </div>
-          <div class="metric">
-            <span class="metric-value">10 days</span>
-            <span class="metric-label">faster cycle</span>
+          <div class="project-card">
+            <div class="project-header">
+              <h3>B2B Workflow Automation</h3>
+              <span class="project-year">Sago • 2023</span>
+            </div>
+            <p class="project-description">Automated RFQ-to-Invoice for international teams. Reduced manual work by 30%.</p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-value">30%</span><span class="metric-label">less manual work</span></div>
+              <div class="metric"><span class="metric-value">10 days</span><span class="metric-label">faster cycle</span></div>
+            </div>
+            <div class="project-tags">
+              <span class="tag">Automation</span><span class="tag">APIs</span><span class="tag">Salesforce</span>
+            </div>
           </div>
         </div>
-        <div class="project-tags">
-          <span class="tag">Automation</span>
-          <span class="tag">B2B</span>
-          <span class="tag">APIs</span>
-          <span class="tag">Salesforce</span>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- Vibe Coding Section -->
-<section id="vibecoding" class="section section-alt">
-  <div class="section-content">
-    <h2 class="section-title">Vibe Coding</h2>
-    <p class="contact-intro" style="margin-bottom: 3rem; text-align: center;">
-      Passion projects built for fun, learning, and solving everyday problems
-    </p>
-    
-    <div class="projects">
-      <!-- Purushartha App -->
-<div class="project-card">
-  <div class="project-header">
-    <h3>Purushartha App</h3>
-    <span class="project-year">Side Project • 2024</span>
-  </div>
-  <p class="project-description">
-    A daily life manager app inspired by ancient Indian philosophy. Helps users balance the four Purusharthas 
-    (Dharma, Artha, Kama, Moksha) through daily tracking, reflection, and mindful habit building.
-  </p>
-  <div class="project-metrics">
-    <div class="metric">
-      <span class="metric-value">4</span>
-      <span class="metric-label">life pillars</span>
-    </div>
-    <div class="metric">
-      <span class="metric-value">Daily</span>
-      <span class="metric-label">tracking</span>
-    </div>
-    <div class="metric">
-      <span class="metric-value">Mindful</span>
-      <span class="metric-label">living</span>
-    </div>
-  </div>
-  <div class="project-actions">
-    <a href="https://purushartha.expo.app/" class="btn btn-small btn-primary" target="_blank">
-      Live Prototype ↗
-    </a>
-    <a href="https://github.com/somanshu-agarwal/purushartha" class="btn btn-small" target="_blank">
-      View Code
-    </a>
-  </div>
-  <div class="project-tags">
-    <span class="tag">React Native</span>
-    <span class="tag">Mindfulness</span>
-    <span class="tag">Daily Tracking</span>
-    <span class="tag">Philosophy</span>
-  </div>
-</div>
+    </section>
 
-      <!-- BareMinimum App (Moved from Work) -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>BareMinimum App</h3>
-          <span class="project-year">Side Project • 2024</span>
-        </div>
-        <p class="project-description">
-          B2C personal finance app for mindful spending. Built from discovery to launch, 
-          solving real user pain points around budget anxiety and financial overwhelm.
-        </p>
-        <div class="project-metrics">
-          <div class="metric">
-            <span class="metric-value">Zero-based</span>
-            <span class="metric-label">budgeting</span>
+    <section id="vibecoding" class="section section-alt">
+      <div class="section-content">
+        <h2 class="section-title">Vibe Coding</h2>
+        <div class="projects-grid">
+          <div class="project-card highlight-card">
+            <div class="project-header"><h3>Purushartha App</h3><span class="project-year">2024</span></div>
+            <p>Life manager inspired by Indian philosophy. Balancing Dharma, Artha, Kama, and Moksha.</p>
+            <div class="project-actions">
+              <a href="https://purushartha.expo.app/" class="btn btn-small btn-primary" target="_blank">Live Prototype ↗</a>
+            </div>
           </div>
-          <div class="metric">
-            <span class="metric-value">Mindful</span>
-            <span class="metric-label">spending</span>
+          <div class="project-card">
+            <div class="project-header"><h3>BareMinimum</h3><span class="project-year">2024</span></div>
+            <p>B2C finance app for mindful spending. Solving budget anxiety.</p>
+            <div class="project-actions">
+              <a href="https://github.com/somanshu-agarwal/bareminimum" class="btn btn-small" target="_blank">View Code</a>
+            </div>
           </div>
         </div>
-        <div class="project-actions">
-          <a href="https://github.com/somanshu-agarwal/bareminimum" class="btn btn-small" target="_blank">
-            View Code
-          </a>
-        </div>
-        <div class="project-tags">
-          <span class="tag">B2C</span>
-          <span class="tag">React</span>
-          <span class="tag">User Research</span>
-          <span class="tag">Personal Finance</span>
-        </div>
       </div>
-    </div>
-  </div>
-</section>    
+    </section>
 
-<!-- Design & Strategy Section -->
-<section id="design" class="section section-alt">
-  <div class="section-content">
-    <h2 class="section-title">Design & Strategy</h2>
-    
-    <div class="projects">
-      <!-- BidCube Design -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>BidCube UX Revamp</h3>
-          <span class="project-year">Sago • 2023</span>
-        </div>
-        <p class="project-description">
-          Complete redesign of bidding management tool. Included functional flow analysis, current state challenges, and future state vision across all modules.
-        </p>
-        <div class="project-actions">
-          <a href="https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp?t=j8CLTMzGcsZv7kMw-1" 
-             class="btn btn-small" target="_blank">
-            View Strategy Board
-          </a>
-          <a href="https://www.figma.com/proto/YGKjPkEatHKjhqae5Wa6M8/Bid-Cube-Revamp-Designs--Copy-?node-id=195-3257&p=f&t=nsC80Qlrx791uRGp-1&scaling=scale-down&content-scaling=responsive&page-id=103%3A242&starting-point-node-id=195%3A3257" 
-             class="btn btn-small" target="_blank">
-            View UI Designs
-          </a>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Figma</span>
-          <span class="tag">User Journey</span>
-          <span class="tag">B2B SaaS</span>
-          <span class="tag">UX Design</span>
-        </div>
-      </div>
-
-      <!-- Sukanya Calculator -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Sukanya Samriddhi Calculator</h3>
-          <span class="project-year">Jagran • 2021</span>
-        </div>
-        <p class="project-description">
-          Designed user journey and interface for financial calculator helping parents plan for daughters' education. Simplified complex financial planning into intuitive workflows.
-        </p>
-        <div class="project-actions">
-          <a href="https://www.figma.com/proto/4wTt0Xpeavnv2VHBrp1Jwu/Untitled?node-id=1-2&p=f&t=DOn2pe4TTVmOmYax-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" 
-             class="btn btn-small" target="_blank">
-            View Prototype
-          </a>
-        </div>
-        <div class="project-tags">
-          <span class="tag">User Journey</span>
-          <span class="tag">Financial UX</span>
-          <span class="tag">Calculator Design</span>
-          <span class="tag">B2C</span>
-        </div>
-      </div>
-
-      <!-- Indie Music Website -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Indie Music News Platform</h3>
-          <span class="project-year">Side Project • 2024</span>
-        </div>
-        <p class="project-description">
-          Designed a modern platform for independent music discovery. Focused on artist storytelling and community engagement through intuitive UI/UX.
-        </p>
-        <div class="project-actions">
-          <a href="https://www.figma.com/proto/A1TmSuheLTBh8a9zPkxA2i/INDIE-NEWS?node-id=12-934&p=f&t=nxGbr3IvViGdw4zh-1&scaling=contain&content-scaling=responsive&page-id=0%3A1" 
-             class="btn btn-small" target="_blank">
-            View Prototype
-          </a>
-        </div>
-        <div class="project-tags">
-          <span class="tag">UI/UX</span>
-          <span class="tag">Figma</span>
-          <span class="tag">Content Strategy</span>
-          <span class="tag">Visual Design</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <!-- Writing Section -->
     <section id="writing" class="section">
       <div class="section-content">
         <h2 class="section-title">My Writing</h2>
-        <p class="contact-intro" style="margin-bottom: 3rem;">
-          I write about product, life, and the messiness of building things. 
-          <a href="https://blogbysomanshu.substack.com/" target="_blank" style="color: #000; text-decoration: underline;">Read on Substack ↗</a>
-        </p>
-        
-        <div id="substack-feed" class="projects">
-          <div class="project-card" style="text-align: center; opacity: 0.5;">
-            <p>Loading latest thoughts...</p>
+        <p class="section-intro">I write about product, life, and the messiness of building things.</p>
+        <div id="substack-feed" class="blog-list">
           </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://blogbysomanshu.substack.com/" target="_blank" class="btn btn-secondary">Read more on Substack ↗</a>
         </div>
       </div>
     </section>
 
-    <!-- About - Human Approach -->
-    <section id="about" class="section">
-      <div class="section-content">
-        <h2 class="section-title">My Approach</h2>
-        
-        <div class="about-content">
-          <div class="about-text">
-            <p class="about-intro">
-              I believe technology should serve people, not the other way around. 
-              My journey from engineering to product taught me that the best solutions come from understanding both code and humans.
-            </p>
-            
-            <div class="about-highlights">
-              <div class="highlight">
-                <strong>9+ years</strong>
-                <span>in tech</span>
-              </div>
-              <div class="highlight">
-                <strong>Empathy First</strong>
-                <span>approach</span>
-              </div>
-              <div class="highlight">
-                <strong>Impact Driven</strong>
-                <span>mindset</span>
-              </div>
-            </div>
-
-            <!-- Simple Beliefs - Replaced Framework -->
-            <div class="beliefs">
-              <p>I listen more than I talk. The best insights come from users, not assumptions.</p>
-              <p>Complexity should be handled by the system, not felt by the user.</p>
-              <p>Great products solve real problems for real people.</p>
-            </div>
-
-            <div class="skills-minimal">
-              <h4>What I Do</h4>
-              <div class="skills-tags">
-                <span class="skill-tag">Product Strategy</span>
-                <span class="skill-tag">User Research</span>
-                <span class="skill-tag">Team Leadership</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">Execution</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="about-sidebar">
-            <div class="fun-facts">
-              <h4>Beyond Work</h4>
-              <ul>
-                <li><a href="https://chambalguy.com" target="_blank" class="music-link">🎸 Write and play music</a></li>
-                <li>🏋️ Love strength training</li>
-                <li>👨‍🍳 Experiment with cooking</li>
-                <li>☕ Masala chai enthusiast</li>
-                <li>🚀 Build side projects</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact - Human Connection -->
     <section id="contact" class="section section-alt">
       <div class="section-content">
         <h2 class="section-title">Let's Connect</h2>
-        <p class="contact-intro">
-          If you're building something meaningful or just want to chat about products, 
-          I'd love to hear from you. No buzzwords, just real talk.
-        </p>
-        
         <div class="contact-actions">
-          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-large">
-            Send me an email
-          </a>
+          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-large">Send me an email</a>
           <div class="contact-links">
             <a href="https://www.linkedin.com/in/somanshu-agarwal/" target="_blank">LinkedIn</a>
             <a href="https://github.com/somanshu-agarwal" target="_blank">GitHub</a>
@@ -383,15 +126,10 @@
       </div>
     </section>
 
-    <!-- Minimal Footer -->
     <footer class="footer">
-      <div class="footer-content">
-        <p>Built with care and too much masala chai</p>
-        <p>© 2024 Somanshu Agarwal</p>
-      </div>
+      <p>Built with care and too much masala chai © 2024</p>
     </footer>
   </div>
-
   <script src="js/app.js"></script>
 </body>
 </html>
