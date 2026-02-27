@@ -1,125 +1,119 @@
-const DATA = {
-    work: [
-        {
-            title: "FinTech Q2C Transformation",
-            company: "FIS • 2024",
-            desc: "Modernized quote-to-cash for global fintech via Azure middleware.",
-            metrics: [["60%", "Faster"], ["6+", "Integrations"]],
-            tags: ["Azure", "Middleware", "Enterprise"]
-        },
-        {
-            title: "B2B Workflow Automation",
-            company: "Sago • 2023",
-            desc: "Automated RFQ-to-Invoice for international teams. Reduced manual work.",
-            metrics: [["30%", "Less Manual"], ["10d", "Faster Cycle"]],
-            tags: ["Automation", "APIs", "Salesforce"]
-        }
-    ],
-    vibe: [
-        {
-            title: "Purushartha App",
-            desc: "Life manager inspired by Indian philosophy. Balancing Dharma and Artha.",
-            link: "https://purushartha.expo.app/",
-            tags: ["React Native", "Philosophy"]
-        },
-        {
-            title: "BareMinimum",
-            desc: "B2C personal finance app for mindful, zero-based budgeting.",
-            link: "https://github.com/somanshu-agarwal/bareminimum",
-            tags: ["React", "Finance"]
-        }
-    ],
-    design: [
-        {
-            title: "BidCube UX Revamp",
-            desc: "Complete redesign of bidding management tool strategy and UI flow.",
-            link: "https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp",
-            tags: ["Figma", "UX Strategy"]
-        },
-        {
-            title: "Sukanya Samriddhi",
-            desc: "Financial calculator journey helping parents plan for education.",
-            link: "https://www.figma.com/proto/4wTt0Xpeavnv2VHBrp1Jwu/Untitled",
-            tags: ["B2C", "Financial UX"]
-        }
-    ],
-    writing: [
-        {
-            title: "The problem with generic templates",
-            date: "Feb 28, 2026",
-            excerpt: "Why the current web aesthetic is making every PM portfolio look the same.",
-            link: "https://blogbysomanshu.substack.com/"
-        },
-        {
-            title: "Dharma in Product Design",
-            date: "Feb 15, 2026",
-            excerpt: "Applying ancient philosophy to rethink ethical user retention.",
-            link: "https://blogbysomanshu.substack.com/"
-        }
-    ]
-};
+// Simple app.js for minimal portfolio with Substack integration
+class MinimalPortfolio {
+    constructor() {
+        this.init();
+    }
 
-class PortfolioApp {
     init() {
-        this.renderWork();
-        this.renderVibe();
-        this.renderDesign();
-        this.renderWriting();
+        console.log('🚀 Minimal portfolio loaded');
+        this.addSmoothScrolling();
+        this.addScrollEffects();
+        this.loadSubstackFeed(); // Load blog posts
     }
 
-    renderWork() {
-        const grid = document.getElementById('work-grid');
-        grid.innerHTML = DATA.work.map(p => `
-            <div class="project-card">
-                <div>
-                    <div class="project-header"><h3>${p.title}</h3><span>${p.company}</span></div>
-                    <p>${p.desc}</p>
-                    <div class="project-metrics">
-                        ${p.metrics.map(m => `<div class="metric"><span class="metric-value">${m[0]}</span><span class="metric-label">${m[1]}</span></div>`).join('')}
-                    </div>
+    addSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    addScrollEffects() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    }
+
+    // ===== Substack Feed Fetcher ===== //
+    async loadSubstackFeed() {
+        const feedContainer = document.getElementById('substack-feed');
+        if (!feedContainer) return;
+
+        const rssUrl = 'https://blogbysomanshu.substack.com/feed';
+        const converterUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        try {
+            const response = await fetch(converterUrl);
+            const data = await response.json();
+
+            if (data.status === 'ok') {
+                feedContainer.innerHTML = '';
+
+                // Take the first 3 posts only
+                data.items.slice(0, 3).forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    
+                    const date = new Date(item.pubDate).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+
+                    card.innerHTML = `
+                        <div class="project-header">
+                            <h3>${item.title}</h3>
+                            <span class="project-year">${date}</span>
+                        </div>
+                        <p class="project-description">
+                            ${this.stripHtml(item.description).substring(0, 140)}...
+                        </p>
+                        <div class="project-actions">
+                            <a href="${item.link}" class="btn btn-small" target="_blank">
+                                Read Article ↗
+                            </a>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Substack</span>
+                            <span class="tag">Writing</span>
+                        </div>
+                    `;
+                    
+                    feedContainer.appendChild(card);
+                });
+                
+                // Re-trigger scroll animations for the new cards
+                this.addScrollEffects();
+            }
+        } catch (error) {
+            console.error('Error fetching Substack feed:', error);
+            feedContainer.innerHTML = `
+                <div class="project-card" style="text-align: center;">
+                    <p>Check out my <a href="https://blogbysomanshu.substack.com/">Substack</a> for the latest writing.</p>
                 </div>
-                <div class="project-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-            </div>
-        `).join('');
+            `;
+        }
     }
 
-    renderVibe() {
-        const grid = document.getElementById('vibe-grid');
-        grid.innerHTML = DATA.vibe.map(p => `
-            <div class="project-card">
-                <h3>${p.title}</h3>
-                <p>${p.desc}</p>
-                <a href="${p.link}" target="_blank" class="btn btn-secondary btn-small">View Project ↗</a>
-                <div class="project-tags" style="margin-top:15px">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-            </div>
-        `).join('');
-    }
-
-    renderDesign() {
-        const grid = document.getElementById('design-grid');
-        grid.innerHTML = DATA.design.map(p => `
-            <div class="project-card">
-                <h3>${p.title}</h3>
-                <p>${p.desc}</p>
-                <a href="${p.link}" target="_blank" class="btn btn-secondary btn-small">View Figma ↗</a>
-                <div class="project-tags" style="margin-top:15px">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-            </div>
-        `).join('');
-    }
-
-    renderWriting() {
-        const feed = document.getElementById('substack-feed');
-        feed.innerHTML = DATA.writing.map(post => `
-            <article class="blog-entry" style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 2rem;">
-                <span class="blog-date" style="color:#999; font-size:0.8rem;">${post.date}</span>
-                <a href="${post.link}" target="_blank" style="text-decoration:none; color:inherit;"><h3>${post.title}</h3></a>
-                <p style="color:var(--accent)">${post.excerpt}</p>
-            </article>
-        `).join('');
+    stripHtml(html) {
+       let tmp = document.createElement("DIV");
+       tmp.innerHTML = html;
+       return tmp.textContent || tmp.innerText || "";
     }
 }
 
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const app = new PortfolioApp();
-    app.init();
+    new MinimalPortfolio();
 });
+
