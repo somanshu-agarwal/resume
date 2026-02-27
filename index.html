@@ -7,7 +7,61 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* CSS - The Look */
+    :root { --bg: #ffffff; --text: #1a1a1a; --accent: #666; --light: #f9f9f9; --border: #eeeeee; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; scroll-behavior: smooth; }
+
+    .header { padding: 1.2rem 2rem; position: sticky; top: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--border); }
+    .header-content { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-mark { font-weight: 800; background: #000; color: #fff; padding: 5px 10px; border-radius: 4px; }
+    .nav a { text-decoration: none; color: var(--accent); margin-left: 1.5rem; font-size: 0.85rem; font-weight: 500; }
+
+    .hero { padding: 8rem 2rem 5rem; text-align: center; max-width: 850px; margin: 0 auto; }
+    .hero-image { width: 100px; height: 100px; border-radius: 50%; background: var(--light); margin: 0 auto 2rem; border: 1px solid var(--border); overflow: hidden; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem; }
+    .hero-title { font-size: 3.5rem; line-height: 1.1; letter-spacing: -0.05em; margin-bottom: 1.5rem; }
+    .title-accent { color: var(--accent); font-style: italic; }
+    .hero-subtitle { font-size: 1.2rem; color: var(--accent); max-width: 600px; margin: 0 auto 2rem; }
+
+    .section { padding: 6rem 2rem; }
+    .section-alt { background: var(--light); }
+    .section-content { max-width: 1000px; margin: 0 auto; }
+    .section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 3.5rem; text-align: center; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .project-card { background: #fff; padding: 2rem; border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; transition: transform 0.2s; }
+    .project-card:hover { transform: translateY(-4px); }
+    .project-header { display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: baseline; }
+    .project-header h3 { font-size: 1.2rem; }
+
+    .project-metrics { display: flex; gap: 1.5rem; margin: 1.5rem 0; padding: 1rem 0; border-top: 1px solid var(--border); }
+    .metric { display: flex; flex-direction: column; }
+    .metric-value { font-size: 1.25rem; font-weight: 700; display: block; }
+    .metric-label { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; }
+    
+    .tag { font-size: 0.65rem; background: var(--light); padding: 4px 8px; border-radius: 4px; margin-right: 5px; color: var(--accent); border: 1px solid var(--border); }
+
+    .about-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+    .about-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .highlight { padding: 1.5rem; background: var(--light); border-radius: 8px; text-align: center; border: 1px solid var(--border); }
+    .highlight strong { display: block; font-size: 1.2rem; }
+    .highlight span { font-size: 0.7rem; color: var(--accent); }
+
+    .btn { padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.2s; display: inline-block; }
+    .btn-primary { background: #000; color: #fff; }
+    .btn-secondary { border: 1px solid var(--border); color: #000; }
+    .btn-small { padding: 0.4rem 0.8rem; font-size: 0.75rem; margin-top: 1rem; }
+
+    .footer { padding: 4rem 2rem; text-align: center; border-top: 1px solid var(--border); color: var(--accent); font-size: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .about-layout { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -20,23 +74,19 @@
           <a href="#design">Design</a>
           <a href="#writing">Writing</a>
           <a href="#about">About</a>
-          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-image">
-          <img src="assets/profile.jpg" alt="Somanshu Agarwal" onerror="this.style.display='none'">
-          <div class="image-fallback">SA</div>
-        </div>
+        <div class="hero-image">SA</div>
         <h1 class="hero-greeting">Hi, I'm Somanshu</h1>
         <h2 class="hero-title">I build products that <span class="title-accent">people actually love</span></h2>
         <p class="hero-subtitle">Started with code, fell in love with people. Now I build products that make life better.</p>
         <div class="hero-actions">
           <a href="#work" class="btn btn-primary">See my work</a>
-          <a href="#contact" class="btn btn-secondary">Let's talk</a>
+          <a href="mailto:somanshu.agarwal01@gmail.com" class="btn btn-secondary">Let's talk</a>
         </div>
       </div>
     </section>
@@ -44,55 +94,51 @@
     <section id="work" class="section">
       <div class="section-content">
         <h2 class="section-title">Professional Impact</h2>
-        <div id="work-grid" class="projects-grid">
-            </div>
+        <div id="work-grid" class="projects-grid"></div>
       </div>
     </section>
 
     <section id="vibecoding" class="section section-alt">
       <div class="section-content">
         <h2 class="section-title">Vibe Coding</h2>
-        <div id="vibe-grid" class="projects-grid">
-            </div>
+        <div id="vibe-grid" class="projects-grid"></div>
       </div>
     </section>
 
     <section id="design" class="section">
         <div class="section-content">
           <h2 class="section-title">Design & Strategy</h2>
-          <div id="design-grid" class="projects-grid">
-              </div>
+          <div id="design-grid" class="projects-grid"></div>
         </div>
       </section>
 
     <section id="writing" class="section section-alt">
       <div class="section-content">
         <h2 class="section-title">My Writing</h2>
-        <div id="substack-feed" class="blog-list">
-            </div>
+        <div id="substack-feed" style="max-width: 700px; margin: 0 auto;"></div>
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="https://blogbysomanshu.substack.com/" target="_blank" class="btn btn-secondary">Read more on Substack ↗</a>
+            <a href="https://blogbysomanshu.substack.com/" target="_blank" class="btn btn-secondary">Substack ↗</a>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
         <div class="section-content">
-          <h2 class="section-title">The Human Behind the Code</h2>
+          <h2 class="section-title">Approach</h2>
           <div class="about-layout">
             <div class="about-text">
                 <p>I believe technology should serve people, not the other way around. My journey from engineering to product taught me that the best solutions come from understanding both code and humans.</p>
                 <div class="about-highlights">
                     <div class="highlight"><strong>9+ years</strong><span>in tech</span></div>
-                    <div class="highlight"><strong>Empathy First</strong><span>approach</span></div>
-                    <div class="highlight"><strong>Impact Driven</strong><span>mindset</span></div>
+                    <div class="highlight"><strong>Empathy</strong><span>first</span></div>
+                    <div class="highlight"><strong>Impact</strong><span>driven</span></div>
                 </div>
             </div>
-            <div class="about-sidebar">
-                <h4>Beyond the Deck</h4>
-                <ul class="fun-facts">
-                    <li>🎸 Indie music & guitar</li>
-                    <li>🏋️ Strength training</li>
+            <div style="background:var(--light); padding: 2rem; border-radius: 12px;">
+                <h4 style="margin-bottom:1rem;">Beyond Work</h4>
+                <ul style="list-style:none; font-size: 0.9rem; color: var(--accent);">
+                    <li style="margin-bottom:0.5rem;">🎸 Indie music & guitar</li>
+                    <li style="margin-bottom:0.5rem;">🏋️ Strength training</li>
                     <li>☕ Masala chai enthusiast</li>
                 </ul>
             </div>
@@ -104,6 +150,102 @@
       <p>Built with care and too much masala chai © 2026 Somanshu Agarwal</p>
     </footer>
   </div>
-  <script src="js/app.js"></script>
+
+  <script>
+    /* JS - The Data & Logic */
+    const DATA = {
+        work: [
+            {
+                title: "FinTech Q2C Transformation",
+                company: "FIS • 2024",
+                desc: "Modernized quote-to-cash for global fintech via Azure middleware.",
+                metrics: [["60%", "Faster"], ["6+", "Integrations"]],
+                tags: ["Azure", "Enterprise"]
+            },
+            {
+                title: "B2B Workflow Automation",
+                company: "Sago • 2023",
+                desc: "Automated RFQ-to-Invoice for international teams. Reduced manual work.",
+                metrics: [["30%", "Less Manual"], ["10d", "Faster Cycle"]],
+                tags: ["Automation", "Salesforce"]
+            }
+        ],
+        vibe: [
+            {
+                title: "Purushartha App",
+                desc: "Life manager inspired by Indian philosophy. Balancing Dharma and Artha.",
+                link: "https://purushartha.expo.app/",
+                tags: ["React Native", "Philosophy"]
+            },
+            {
+                title: "BareMinimum",
+                desc: "B2C personal finance app for mindful, zero-based budgeting.",
+                link: "https://github.com/somanshu-agarwal/bareminimum",
+                tags: ["React", "Finance"]
+            }
+        ],
+        design: [
+            {
+                title: "BidCube UX Revamp",
+                desc: "Complete redesign of bidding management tool strategy and UI flow.",
+                link: "https://www.figma.com/board/5P5LysmciTrtPB0YVpefUe/Bid-Cube-Revamp",
+                tags: ["Figma", "UX Strategy"]
+            }
+        ],
+        writing: [
+            {
+                title: "Dharma in Product Design",
+                date: "Feb 15, 2026",
+                excerpt: "Applying ancient philosophy to rethink ethical user retention.",
+                link: "https://blogbysomanshu.substack.com/"
+            }
+        ]
+    };
+
+    function renderAll() {
+        // Render Work
+        document.getElementById('work-grid').innerHTML = DATA.work.map(p => `
+            <div class="project-card">
+                <div>
+                    <div class="project-header"><h3>${p.title}</h3><span class="tag">${p.company}</span></div>
+                    <p style="font-size:0.9rem; color: #444;">${p.desc}</p>
+                    <div class="project-metrics">
+                        ${p.metrics.map(m => `<div class="metric"><span class="metric-value">${m[0]}</span><span class="metric-label">${m[1]}</span></div>`).join('')}
+                    </div>
+                </div>
+                <div>${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+            </div>
+        `).join('');
+
+        // Render Vibe Coding
+        document.getElementById('vibe-grid').innerHTML = DATA.vibe.map(p => `
+            <div class="project-card">
+                <h3>${p.title}</h3>
+                <p style="font-size:0.9rem; color: #444; margin: 1rem 0;">${p.desc}</p>
+                <a href="${p.link}" target="_blank" class="btn btn-secondary btn-small">View ↗</a>
+            </div>
+        `).join('');
+
+        // Render Design
+        document.getElementById('design-grid').innerHTML = DATA.design.map(p => `
+            <div class="project-card">
+                <h3>${p.title}</h3>
+                <p style="font-size:0.9rem; color: #444; margin: 1rem 0;">${p.desc}</p>
+                <a href="${p.link}" target="_blank" class="btn btn-secondary btn-small">Figma ↗</a>
+            </div>
+        `).join('');
+
+        // Render Writing
+        document.getElementById('substack-feed').innerHTML = DATA.writing.map(post => `
+            <article style="margin-bottom: 2rem;">
+                <span style="color:#999; font-size:0.8rem;">${post.date}</span>
+                <a href="${post.link}" target="_blank" style="text-decoration:none; color:inherit;"><h3>${post.title}</h3></a>
+                <p style="color:var(--accent); font-size:0.9rem;">${post.excerpt}</p>
+            </article>
+        `).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderAll);
+  </script>
 </body>
 </html>
